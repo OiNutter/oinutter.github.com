@@ -2,8 +2,45 @@
 // To give it a try, uncomment some of the lines below rebuild your blog, and see how it works. your sites's.
 // If you love to use Web Fonts, you also need to add some lines to source/_includes/custom/head.html
 
-//$sans: "Optima", sans-serif;
+
+@font-face {
+    font-family: 'Museo700';
+    src: url('../fonts/museo700-regular-webfont.eot');
+    src: url('../fonts/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museo700-regular-webfont.woff') format('woff'),
+         url('../fonts/museo700-regular-webfont.ttf') format('truetype'),
+         url('../fonts/museo700-regular-webfont.svg#Museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo500';
+    src: url('../fonts/museo500-regular-webfont.eot');
+    src: url('../fonts/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museo500-regular-webfont.woff') format('woff'),
+         url('../fonts/museo500-regular-webfont.ttf') format('truetype'),
+         url('../fonts/museo500-regular-webfont.svg#Museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo300';
+    src: url('../fonts/museo300-regular-webfont.eot');
+    src: url('../fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museo300-regular-webfont.woff') format('woff'),
+         url('../fonts/museo300-regular-webfont.ttf') format('truetype'),
+         url('../fonts/museo300-regular-webfont.svg#Museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+//$sans: "Museo", sans-serif;
 //$serif: "Baskerville", serif;
 //$mono: "Courier", monospace;
-//$heading-font-family: "Verdana", sans-serif;
-//$header-title-font-family: "Futura", sans-serif;
+$heading-font-family: "Museo500", sans-serif;
+$header-title-font-family: "Museo300", sans-serif;
