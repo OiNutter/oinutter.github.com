@@ -44,6 +44,9 @@ article {
     font-size: 2.0em; font-style: italic;
     line-height: 1.3em;
   }
+  ul{
+    margin-left:40px;
+  }
   img, video, .flash-video {
     @extend .flex-content;
     @extend .basic-alignment;
