@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Introducing Skeletor and Grayskull - OiNutter.co.uk</title>
+  <meta name="author" content="Will McKenzie">
+
+  
+  <meta name="description" content="So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OiNutter.co.uk" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OiNutter.co.uk</a></h1>
+  
+    <h2>What semi-colon?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:oinutter.co.uk" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul class="main-navigation">
+  <li><a href="/about/">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Introducing Skeletor and Grayskull</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-20T00:00:00+01:00" pubdate data-updated="true">Oct 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I&#8217;ve used Ruby a little in the Rakefiles I use for building my javascript projects but not really done any major work with it, until now.</p>
+<p>I&#8217;ve been trying to find a nice simple solution for setting up my project skeletons quickly and easily. I&#8217;d thought of some sort of Git repository but then I&#8217;d end up with some faffy process involving multiple branches for different project types and having to clone a repository and then remove the git repository in the newly cloned folder and well, this didn&#8217;t sound quick or easy. Eventually I hit on the idea of a command line ruby gem that could use templates defining a directory structure to set up what I needed. A quick search turned up nothing that seemed to do the job, the closest thing was <a title="Mr Bones Ruby Gem" href="https://rubygems.org/gems/bones" target="_blank">Mr Bones</a> but that seemed to be entirely for Ruby projects and the template skeleton wasn&#8217;t easily customisable.  I was disappointed that it existed though as I wanted to name my gem bones but hey, how many things am I going to write that I can actually justify calling Skeletor?</p>
+<p>So I started looking into what was involved in creating ruby gems. Initially I started of using <a title="Jeweler" href="https://github.com/technicalpickles/jeweler" target="_blank">Jeweler</a> but this created a lot of stuff I didn&#8217;t really understand so I decided to strip everything back and just look at the structure of some gems I already used. My main source of reference was Sprockets but I also used Capistrano when trying to understand the command line aspect of the gem. These gave me a good source of reference for what was required in the various gem files.</p>
+<p>For anyone who&#8217;s not created gemfiles before the basic folder structure is  as follows:</p>
+<ul>
+<li>lib - contains 1 ruby file with the same name as the gem and a folder also named after the gem which contains all the code for the gem</li>
+<li>bin - optional folder that contains the command line executable files for the gem</li>
+<li>test - contains the unit test files</li>
+<li>a Gemfile that contains the dependencies for the gem</li>
+<li>a.gemspec file that contains the configuration details for building the gem</li>
+<li>the usual README and LICENSE files in your choice of format</li>
+</ul>
+<p>I&#8217;m not going to go into the details of each of those files.  I&#8217;d say the best thing to do is to check out the source of some of the gems that you use and that will probably give you the best understanding of what&#8217;s required. I&#8217;m using <a title="Thor" href="https://github.com/wycats/thor" target="_blank">Thor</a> for the command line interface and <a title="Hike" href="https://github.com/sstephenson/hike" target="_blank">Hike</a> to locate the files in the 2 possible load paths.</p>
+<p>Skeletor supports defining a directory structure with files and folders. You can also specify include files which will be copied into the directory, either from a local file or a remote url, and define build tasks to be run after the directory is set up.</p>
+<p>The code for Skeletor is actually pretty simple. Ruby&#8217;s built in YAML.load function converts the template file into a Ruby Hash object which can then be looped through and there is a <a title="JSON implementation for Ruby" href="http://flori.github.com/json/" target="_blank">JSON</a> gem that works in the same way. The most complicated part was the validation code as I needed to be able to specify custom data types that a node could match any one of.  The only gem I could find for YAML validation was <a title="Kwalify" href="http://www.kuwata-lab.com/kwalify/" target="_blank">Kwalify</a> but that wasn&#8217;t flexible enough for what I needed so I had to write my own. I eventually managed to get a working validation class that worked for what I wanted and decided to extract it into it&#8217;s own gem so it could be used for other projects, and thus Grayskull was born.</p>
+<p>Grayskull will validate JSON and YAML files against a given schema including matching against custom types. All the details for how to create the schema are at the GitHub page, as are the instructions on how to install and use it. The same goes for Skeletor. Grayskull is also using Thor for the command line as well as the aforementioned JSON gem for validation.</p>
+<p>Check out the project pages for more info and the GitHub repositories for the source code and instructions.</p>
+<p><a title="Skeletor" href="http://www.oinutter.co.uk/projects/skeletor/">Skeletor</a> | <a title="Skeletor on GitHub" href="http://github.com/OiNutter/skeletor" target="_blank">GitHub</a></p>
+<p><a title="Grayskull" href="http://www.oinutter.co.uk/projects/grayskull/">Grayskull</a> | <a title="Grayskull on GitHub" href="http://github.com/OiNutter/grayskull" target="_blank">GitHub</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Will McKenzie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-20T00:00:00+01:00" pubdate data-updated="true">Oct 20<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull/" data-via="enechorion" data-counturl="http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/" title="Previous Post: Objective-C and iOS Development - Taking My First Steps">&laquo; Objective-C and iOS Development - Taking My First Steps</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/10/20/introducing-skeletor-and-grayskull/">Introducing Skeletor and Grayskull</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/">Tool tips, javascript animations and coding without a net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/">Zebedee - v0.2 - A whole lot of frameworks</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/OiNutter">@OiNutter</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'OiNutter',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("enechorion", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/enechorion" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @enechorion</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2011 - Will McKenzie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

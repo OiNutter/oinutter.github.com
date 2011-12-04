@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tool tips, javascript animations and coding without a net - OiNutter.co.uk</title>
+  <meta name="author" content="Will McKenzie">
+
+  
+  <meta name="description" content="I&#8217;ve been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OiNutter.co.uk" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OiNutter.co.uk</a></h1>
+  
+    <h2>What semi-colon?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:oinutter.co.uk" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul class="main-navigation">
+  <li><a href="/about/">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Tool Tips, Javascript Animations and Coding Without a Net</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-28T00:00:00+01:00" pubdate data-updated="true">Mar 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;ve been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell users what things
+do without them having to ask us. The only decent tool tip library I&#8217;ve ever found was <a href="http://www.nickstakenburg.com/projects/prototip/">Prototip</a> by Nick
+Stakenburg but I knew I wouldn&#8217;t be able to get away with buying a license for it so I needed to create my own. After my experiences doing the emile.js version of
+zebedee I decided to give myself a bit of a challenge and go completely frameworkless to create a standalone widget.</p>
+
+<p>First up was finding out how to do encapsulation in javascript so that I was only giving access to the methods that needed to be accessible from outside the class.
+The way this is done is to return an object with the public methods defined in it, rather than doing return this. For purposes of scope I defined the methods
+before the return statement, then returned references to them. Like so:</p>
+
+<div><script src='https://gist.github.com/1173224.js?file='></script>
+<noscript><pre><code>var toolTip = function(){
+    var _privateProp = 'foo',
+         _privateMethod = function(){
+             return 'bar';
+         },
+         publicMethod = function(){
+             return _privateProp + _privateMethod();
+         };
+ 
+    return {
+        publicMethod:publicMethod
+    }
+ 
+}</code></pre></noscript></div>
+
+
+<p>Once I had that that figured out it was down to creating the various methods and setting up the event listeners. The main requirement was handling the
+positioning of the tool tip in relation to it&#8217;s trigger element. As the position could either be fixed to a point on the trigger or follow the mouse, I ended up
+creating an object with either the element properties or the mouse coordinates and using that as the starting reference to perform the calculations from, then
+scanned the position option for one of the y position possibilities and set the top and did the same for the x position options. I later expanded this to have an
+optional element passed through which would be positioned instead of the tooltip, for use with the animations.</p>
+
+<p>I spent a lot of time going through <a href="http://prototypejs.org">prototype</a> and <a href="http://zeptojs.com">zepto</a> to find out how to do the various things I needed to do
+without the frameworks and ended up stealing various little bits of code, like the user agent regular expressions from zepto so I could determine whether the
+browser was running webkit, I also tweaked this to check for gecko 2 as well. This was so I could use css animations where available for the transitions. When it
+came to dealing with the animation, <a href="http://github.com/madrobby/emile">emile.js</a> ended up being my main source of reference, to the point that when I needed to
+expand my original animation function to be more flexible I ended up taking emile&#8217;s animation code and a few of it&#8217;s helpers and tweaking them for my own purposes.</p>
+
+<p>The biggest challenge with doing the animation was the scale transition and positioning it, particularly the css animations. With the javascript animation it was
+easy to make the box appear to grow and shrink from it&#8217;s trigger element, as I just needed to call the position method each time I adjusted the size. But with the
+css couldn&#8217;t call anything on each iteration so I had to create a test element that was a clone of the tool tip, alter that, reposition it and get the end values,
+to then pass through to the animation function. In the end it worked out but I&#8217;d like to play around with it to see if I can get something less long winded. I also
+want to have a play to see if it&#8217;s possible to make the text grow and shrink with the box, by using ems. Another interesting thing I discovered while working on the
+CSS transitions is that both Gecko 2 and Webkit have their own version of the transition end event, in Gecko 2 you can use transitionend but in webkit you need to
+call webkitTransitionEnd. Also this event will get called for each property you are animation, so in the case of the scale transition,where I was animating width,
+height,left and top, the event was being called four times. Remember to check for this when writing your handlers.</p>
+
+<p>I ended up namespacing the tool tip function inside a tipBox object, so I could add the scan method and keep them together. This means that while the calls are a
+bit longer, the functions are kept neat and secure, and shouldn&#8217;t conflict with anything.</p>
+
+<p>The scan method enables you to have a load of elements on a page (preferably a tags for semantic reasons) with a given class name that you can turn into tipBox
+triggers with one function call. All you need to do is pass the class name and the options you want to use to the method and it will scan the page and set up the
+tipBox for each one, using the title attribute to supply the text.</p>
+
+<p>I found getting the initial stages of the widget working were a lot easier than I expected, which I take to be a good sign that my understanding and knowledge are
+improving (either that or it&#8217;s easier than I thought and I&#8217;m just being a numpty). The animations presented my biggest challenge and took as much time to work
+round as everything else did to create but were without a doubt the most rewarding part of it to complete. The whole coding without a net approach forced me to
+explore and learn more, and work out my own solutions to how to do things, which was great fun, and will hopefully result in an improvement in my javascript work
+from now on.</p>
+
+<p>Code and demos are available on GitHub:</p>
+
+<p><a href="https://github.com/OiNutter/tipBox">tipBox</a> | <a href="http://oinutter.github.com/tipBox/">Demos</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Will McKenzie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-28T00:00:00+01:00" pubdate data-updated="true">Mar 28<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/" data-via="enechorion" data-counturl="http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/" title="Previous Post: Zebedee - v0.2 - A whole lot of frameworks">&laquo; Zebedee - v0.2 - A whole lot of frameworks</a>
+      
+      
+        <a class="basic-alignment right" href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/" title="next Post: Obscura - Canvas, CoffeeScript and Micro Frameworks">Obscura - Canvas, CoffeeScript and Micro Frameworks &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/10/20/introducing-skeletor-and-grayskull/">Introducing Skeletor and Grayskull</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/">Tool tips, javascript animations and coding without a net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/">Zebedee - v0.2 - A whole lot of frameworks</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/OiNutter">@OiNutter</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'OiNutter',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("enechorion", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/enechorion" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @enechorion</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2011 - Will McKenzie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
