@@ -1,2 +1,38 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+body > header {
+  h1 {
+    font-family: $heading-font-family;
+    a, a:visited, a:hover{
+      color:$header-color;
+    }
+  }
+  h2{
+    font-family: $header-title-font-family;
+  }
+}
+
+article{
+  header{
+    h1{
+      color:$title-color;
+    }
+  }
+}
+
+body > nav{
+  @media only screen and (min-width: 550px){
+    a{
+      font-family:$nav-font-family;
+    }
+  }
+}
+
+aside.sidebar{
+  section{
+    h1{
+      color:$sidebar-header-color;
+    }
+  }
+}

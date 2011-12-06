@@ -9,7 +9,6 @@ article {
     margin-bottom: 1em;
     background: $img-border bottom left repeat-x;
     h1 {
-      color:$title-color;
       margin: 0;
       a { text-decoration: none;
         &:hover { text-decoration: underline; } }
@@ -43,9 +42,6 @@ article {
     background: $img-border bottom left repeat-x;
     font-size: 2.0em; font-style: italic;
     line-height: 1.3em;
-  }
-  ul{
-    margin-left:40px;
   }
   img, video, .flash-video {
     @extend .flex-content;
