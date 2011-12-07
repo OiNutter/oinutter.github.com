@@ -1,6 +1,8 @@
 --- 
 layout: post
 title: Zebedee - v0.2 - A whole lot of frameworks
+categories:
+- Javascript
 tags: 
 - accordion
 - animation

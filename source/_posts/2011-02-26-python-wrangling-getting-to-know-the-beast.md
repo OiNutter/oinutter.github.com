@@ -1,14 +1,13 @@
 --- 
 layout: post
 title: Python Wrangling - Getting To Know The Beast
+categories:
+- Python
 tags: 
-- Coding
 - file
 - gui
-- Standard
 - pyqt4
 - python
-- Python
 - renaming
 status: publish
 type: post

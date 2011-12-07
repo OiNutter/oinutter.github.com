@@ -1,13 +1,12 @@
 --- 
 layout: post
 title: Obscura - Canvas, CoffeeScript and Micro Frameworks
-tags: 
-- Canvas
-- Coding
-- coffee-script
-- coffeescript
-- image manipulation
+categories:
 - Javascript
+tags: 
+- canvas
+- coffee-script
+- image manipulation
 - javascript
 - micro frameworks
 status: publish

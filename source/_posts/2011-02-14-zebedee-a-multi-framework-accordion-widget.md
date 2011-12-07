@@ -1,13 +1,12 @@
 --- 
 layout: post
 title: Zebedee - A Multi Framework Accordion Widget
+categories:
+- Javascript
 tags: 
 - accordion
-- Coding
 - css3
-- Javascript
 - javascript
-- js
 - mobile
 - webkit
 - widget

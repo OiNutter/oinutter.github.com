@@ -1,8 +1,8 @@
 --- 
 layout: post
 title: New Year's Resolutions
-tags: 
-- Coding
+categories: 
+- Misc
 status: publish
 type: post
 published: true

@@ -1,12 +1,12 @@
 --- 
 layout: post
 title: Tool tips, javascript animations and coding without a net
+categories:
+- Javascript
 tags: 
 - animation
-- Coding
 - css3
 - encapsulation
-- Javascript
 - javascript
 - tool tips
 status: publish

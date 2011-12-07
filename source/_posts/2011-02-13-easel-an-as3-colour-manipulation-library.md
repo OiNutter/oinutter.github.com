@@ -1,10 +1,11 @@
 --- 
 layout: post
 title: Easel - An AS3 colour manipulation library
+categories:
+- Actionscript
 tags: 
 - Actionscript
 - AS3
-- Coding
 - color
 - colour
 - HSL
