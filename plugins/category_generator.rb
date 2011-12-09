@@ -155,6 +155,26 @@ module Jekyll
         "#{categories[0...-1].join(', ')}, #{categories[-1]}"
       end
     end
+    # Outputs a list of categories as an unordered list <ul>. Used for the category list in the sidebar
+    #
+    #  +categories is the list of categories to format.
+    #
+    #  Returns string
+    #
+    def category_list(categories)
+      dir = @context.registers[:site].config['category_dir']
+      categories = categories.keys if categories.class == Hash
+      categories = categories.sort!.map do |item|
+        "<li><a class='category' href='/#{dir}/#{item.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'>#{item}</a></li>"
+      end
+
+      case categories.length
+      when 0
+        ""
+      else
+        "<ul>" + categories.join('') + "</ul>"
+      end
+    end
 
     # Outputs the post.date as formatted html, with hooks for CSS styling.
     #
