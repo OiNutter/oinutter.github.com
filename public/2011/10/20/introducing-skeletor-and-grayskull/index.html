@@ -89,10 +89,21 @@
   </header>
 
 
-<div class="entry-content"><p>So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I&#8217;ve used Ruby a little in the Rakefiles I use for building my javascript projects but not really done any major work with it, until now.</p>
-<p>I&#8217;ve been trying to find a nice simple solution for setting up my project skeletons quickly and easily. I&#8217;d thought of some sort of Git repository but then I&#8217;d end up with some faffy process involving multiple branches for different project types and having to clone a repository and then remove the git repository in the newly cloned folder and well, this didn&#8217;t sound quick or easy. Eventually I hit on the idea of a command line ruby gem that could use templates defining a directory structure to set up what I needed. A quick search turned up nothing that seemed to do the job, the closest thing was <a title="Mr Bones Ruby Gem" href="https://rubygems.org/gems/bones" target="_blank">Mr Bones</a> but that seemed to be entirely for Ruby projects and the template skeleton wasn&#8217;t easily customisable.  I was disappointed that it existed though as I wanted to name my gem bones but hey, how many things am I going to write that I can actually justify calling Skeletor?</p>
-<p>So I started looking into what was involved in creating ruby gems. Initially I started of using <a title="Jeweler" href="https://github.com/technicalpickles/jeweler" target="_blank">Jeweler</a> but this created a lot of stuff I didn&#8217;t really understand so I decided to strip everything back and just look at the structure of some gems I already used. My main source of reference was Sprockets but I also used Capistrano when trying to understand the command line aspect of the gem. These gave me a good source of reference for what was required in the various gem files.</p>
-<p>For anyone who&#8217;s not created gemfiles before the basic folder structure is  as follows:</p>
+<div class="entry-content"><p>So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I&#8217;ve used Ruby a little in the Rakefiles I
+use for building my javascript projects but not really done any major work with it, until now.</p>
+
+<p>I&#8217;ve been trying to find a nice simple solution for setting up my project skeletons quickly and easily. I&#8217;d thought of some sort of Git repository but then I&#8217;d end up with some faffy process involving multiple
+branches for different project types and having to clone a repository and then remove the git repository in the newly cloned folder and well, this didn&#8217;t sound quick or easy. Eventually I hit on the idea of a
+command line ruby gem that could use templates defining a directory structure to set up what I needed. A quick search turned up nothing that seemed to do the job, the closest thing was
+<a href="https://rubygems.org/gems/bones">Mr Bones</a> but that seemed to be entirely for Ruby projects and the template skeleton wasn&#8217;t easily customisable.  I was disappointed that it existed though as I wanted to name
+my gem bones but hey, how many things am I going to write that I can actually justify calling Skeletor?</p>
+
+<p>So I started looking into what was involved in creating ruby gems. Initially I started of using <a href="https://github.com/technicalpickles/jeweler">Jeweler</a> but this created a lot of stuff I didn&#8217;t really understand
+so I decided to strip everything back and just look at the structure of some gems I already used. My main source of reference was Sprockets but I also used Capistrano when trying to understand the command line
+aspect of the gem. These gave me a good source of reference for what was required in the various gem files.</p>
+
+<p>For anyone who&#8217;s not created gemfiles before the basic folder structure is as follows:</p>
+
 <ul>
 <li>lib - contains 1 ruby file with the same name as the gem and a folder also named after the gem which contains all the code for the gem</li>
 <li>bin - optional folder that contains the command line executable files for the gem</li>
@@ -101,13 +112,25 @@
 <li>a.gemspec file that contains the configuration details for building the gem</li>
 <li>the usual README and LICENSE files in your choice of format</li>
 </ul>
-<p>I&#8217;m not going to go into the details of each of those files.  I&#8217;d say the best thing to do is to check out the source of some of the gems that you use and that will probably give you the best understanding of what&#8217;s required. I&#8217;m using <a title="Thor" href="https://github.com/wycats/thor" target="_blank">Thor</a> for the command line interface and <a title="Hike" href="https://github.com/sstephenson/hike" target="_blank">Hike</a> to locate the files in the 2 possible load paths.</p>
-<p>Skeletor supports defining a directory structure with files and folders. You can also specify include files which will be copied into the directory, either from a local file or a remote url, and define build tasks to be run after the directory is set up.</p>
-<p>The code for Skeletor is actually pretty simple. Ruby&#8217;s built in YAML.load function converts the template file into a Ruby Hash object which can then be looped through and there is a <a title="JSON implementation for Ruby" href="http://flori.github.com/json/" target="_blank">JSON</a> gem that works in the same way. The most complicated part was the validation code as I needed to be able to specify custom data types that a node could match any one of.  The only gem I could find for YAML validation was <a title="Kwalify" href="http://www.kuwata-lab.com/kwalify/" target="_blank">Kwalify</a> but that wasn&#8217;t flexible enough for what I needed so I had to write my own. I eventually managed to get a working validation class that worked for what I wanted and decided to extract it into it&#8217;s own gem so it could be used for other projects, and thus Grayskull was born.</p>
-<p>Grayskull will validate JSON and YAML files against a given schema including matching against custom types. All the details for how to create the schema are at the GitHub page, as are the instructions on how to install and use it. The same goes for Skeletor. Grayskull is also using Thor for the command line as well as the aforementioned JSON gem for validation.</p>
-<p>Check out the project pages for more info and the GitHub repositories for the source code and instructions.</p>
-<p><a title="Skeletor" href="http://www.oinutter.co.uk/projects/skeletor/">Skeletor</a> | <a title="Skeletor on GitHub" href="http://github.com/OiNutter/skeletor" target="_blank">GitHub</a></p>
-<p><a title="Grayskull" href="http://www.oinutter.co.uk/projects/grayskull/">Grayskull</a> | <a title="Grayskull on GitHub" href="http://github.com/OiNutter/grayskull" target="_blank">GitHub</a></p>
+
+
+<p>I&#8217;m not going to go into the details of each of those files.  I&#8217;d say the best thing to do is to check out the source of some of the gems that you use and that will probably give you the best understanding of
+what&#8217;s required. I&#8217;m using <a href="https://github.com/wycats/thor">Thor</a> for the command line interface and <a href="https://github.com/sstephenson/hike">Hike</a> to locate the files in the 2 possible load paths.</p>
+
+<p>Skeletor supports defining a directory structure with files and folders. You can also specify include files which will be copied into the directory, either from a local file or a remote url, and define build
+tasks to be run after the directory is set up.</p>
+
+<p>The code for Skeletor is actually pretty simple. Ruby&#8217;s built in YAML.load function converts the template file into a Ruby Hash object which can then be looped through and there is a
+<a href="http://flori.github.com/json/">JSON gem</a> that works in the same way. The most complicated part was the validation code as I needed to be able to specify custom data types that a node could match any one of. 
+The only gem I could find for YAML validation was <a href="http://www.kuwata-lab.com/kwalify/">Kwalify</a> but that wasn&#8217;t flexible enough for what I needed so I had to write my own. I eventually managed to get a working
+validation class that worked for what I wanted and decided to extract it into it&#8217;s own gem so it could be used for other projects, and thus Grayskull was born.</p>
+
+<p>Grayskull will validate JSON and YAML files against a given schema including matching against custom types. All the details for how to create the schema are at the GitHub page, as are the instructions on how to
+install and use it. The same goes for Skeletor. Grayskull is also using Thor for the command line as well as the aforementioned JSON gem for validation.</p>
+
+<p>Check out the GitHub repositories for the source code and instructions.</p>
+
+<p><a href="http://github.com/OiNutter/skeletor/">Skeletor</a> | <a href="http://github.com/OiNutter/grayskull">Grayskull</a></p>
 </div>
 
 
@@ -133,6 +156,12 @@
 <time datetime="2011-10-20T00:00:00+01:00" pubdate data-updated="true">Oct 20<span>th</span>, 2011</time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/categories/gems/'>Gems</a>, <a class='category' href='/categories/ruby/'>Ruby</a>
+  
+</span>
+
 
     </p>
     
@@ -147,7 +176,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/" title="Previous Post: Objective-C and iOS Development - Taking My First Steps">&laquo; Objective-C and iOS Development - Taking My First Steps</a>
+        <a class="basic-alignment left" href="/2011/09/10/a-fistful-of-documentation/" title="Previous Post: A Fistful of Documentation">&laquo; A Fistful of Documentation</a>
       
       
     </p>
@@ -167,6 +196,10 @@
       </li>
     
       <li class="post">
+        <a href="/2011/09/10/a-fistful-of-documentation/">A Fistful of Documentation</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
       </li>
     
@@ -176,10 +209,6 @@
     
       <li class="post">
         <a href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/">Tool tips, javascript animations and coding without a net</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/">Zebedee - v0.2 - A whole lot of frameworks</a>
       </li>
     
   </ul>

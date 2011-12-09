@@ -92,10 +92,21 @@
   </header>
 
 
-  <div class="entry-content"><p>So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I&#8217;ve used Ruby a little in the Rakefiles I use for building my javascript projects but not really done any major work with it, until now.</p>
-<p>I&#8217;ve been trying to find a nice simple solution for setting up my project skeletons quickly and easily. I&#8217;d thought of some sort of Git repository but then I&#8217;d end up with some faffy process involving multiple branches for different project types and having to clone a repository and then remove the git repository in the newly cloned folder and well, this didn&#8217;t sound quick or easy. Eventually I hit on the idea of a command line ruby gem that could use templates defining a directory structure to set up what I needed. A quick search turned up nothing that seemed to do the job, the closest thing was <a title="Mr Bones Ruby Gem" href="https://rubygems.org/gems/bones" target="_blank">Mr Bones</a> but that seemed to be entirely for Ruby projects and the template skeleton wasn&#8217;t easily customisable.  I was disappointed that it existed though as I wanted to name my gem bones but hey, how many things am I going to write that I can actually justify calling Skeletor?</p>
-<p>So I started looking into what was involved in creating ruby gems. Initially I started of using <a title="Jeweler" href="https://github.com/technicalpickles/jeweler" target="_blank">Jeweler</a> but this created a lot of stuff I didn&#8217;t really understand so I decided to strip everything back and just look at the structure of some gems I already used. My main source of reference was Sprockets but I also used Capistrano when trying to understand the command line aspect of the gem. These gave me a good source of reference for what was required in the various gem files.</p>
-<p>For anyone who&#8217;s not created gemfiles before the basic folder structure is  as follows:</p>
+  <div class="entry-content"><p>So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I&#8217;ve used Ruby a little in the Rakefiles I
+use for building my javascript projects but not really done any major work with it, until now.</p>
+
+<p>I&#8217;ve been trying to find a nice simple solution for setting up my project skeletons quickly and easily. I&#8217;d thought of some sort of Git repository but then I&#8217;d end up with some faffy process involving multiple
+branches for different project types and having to clone a repository and then remove the git repository in the newly cloned folder and well, this didn&#8217;t sound quick or easy. Eventually I hit on the idea of a
+command line ruby gem that could use templates defining a directory structure to set up what I needed. A quick search turned up nothing that seemed to do the job, the closest thing was
+<a href="https://rubygems.org/gems/bones">Mr Bones</a> but that seemed to be entirely for Ruby projects and the template skeleton wasn&#8217;t easily customisable.  I was disappointed that it existed though as I wanted to name
+my gem bones but hey, how many things am I going to write that I can actually justify calling Skeletor?</p>
+
+<p>So I started looking into what was involved in creating ruby gems. Initially I started of using <a href="https://github.com/technicalpickles/jeweler">Jeweler</a> but this created a lot of stuff I didn&#8217;t really understand
+so I decided to strip everything back and just look at the structure of some gems I already used. My main source of reference was Sprockets but I also used Capistrano when trying to understand the command line
+aspect of the gem. These gave me a good source of reference for what was required in the various gem files.</p>
+
+<p>For anyone who&#8217;s not created gemfiles before the basic folder structure is as follows:</p>
+
 <ul>
 <li>lib - contains 1 ruby file with the same name as the gem and a folder also named after the gem which contains all the code for the gem</li>
 <li>bin - optional folder that contains the command line executable files for the gem</li>
@@ -104,13 +115,69 @@
 <li>a.gemspec file that contains the configuration details for building the gem</li>
 <li>the usual README and LICENSE files in your choice of format</li>
 </ul>
-<p>I&#8217;m not going to go into the details of each of those files.  I&#8217;d say the best thing to do is to check out the source of some of the gems that you use and that will probably give you the best understanding of what&#8217;s required. I&#8217;m using <a title="Thor" href="https://github.com/wycats/thor" target="_blank">Thor</a> for the command line interface and <a title="Hike" href="https://github.com/sstephenson/hike" target="_blank">Hike</a> to locate the files in the 2 possible load paths.</p>
-<p>Skeletor supports defining a directory structure with files and folders. You can also specify include files which will be copied into the directory, either from a local file or a remote url, and define build tasks to be run after the directory is set up.</p>
-<p>The code for Skeletor is actually pretty simple. Ruby&#8217;s built in YAML.load function converts the template file into a Ruby Hash object which can then be looped through and there is a <a title="JSON implementation for Ruby" href="http://flori.github.com/json/" target="_blank">JSON</a> gem that works in the same way. The most complicated part was the validation code as I needed to be able to specify custom data types that a node could match any one of.  The only gem I could find for YAML validation was <a title="Kwalify" href="http://www.kuwata-lab.com/kwalify/" target="_blank">Kwalify</a> but that wasn&#8217;t flexible enough for what I needed so I had to write my own. I eventually managed to get a working validation class that worked for what I wanted and decided to extract it into it&#8217;s own gem so it could be used for other projects, and thus Grayskull was born.</p>
-<p>Grayskull will validate JSON and YAML files against a given schema including matching against custom types. All the details for how to create the schema are at the GitHub page, as are the instructions on how to install and use it. The same goes for Skeletor. Grayskull is also using Thor for the command line as well as the aforementioned JSON gem for validation.</p>
-<p>Check out the project pages for more info and the GitHub repositories for the source code and instructions.</p>
-<p><a title="Skeletor" href="http://www.oinutter.co.uk/projects/skeletor/">Skeletor</a> | <a title="Skeletor on GitHub" href="http://github.com/OiNutter/skeletor" target="_blank">GitHub</a></p>
-<p><a title="Grayskull" href="http://www.oinutter.co.uk/projects/grayskull/">Grayskull</a> | <a title="Grayskull on GitHub" href="http://github.com/OiNutter/grayskull" target="_blank">GitHub</a></p>
+
+
+<p>I&#8217;m not going to go into the details of each of those files.  I&#8217;d say the best thing to do is to check out the source of some of the gems that you use and that will probably give you the best understanding of
+what&#8217;s required. I&#8217;m using <a href="https://github.com/wycats/thor">Thor</a> for the command line interface and <a href="https://github.com/sstephenson/hike">Hike</a> to locate the files in the 2 possible load paths.</p>
+
+<p>Skeletor supports defining a directory structure with files and folders. You can also specify include files which will be copied into the directory, either from a local file or a remote url, and define build
+tasks to be run after the directory is set up.</p>
+
+<p>The code for Skeletor is actually pretty simple. Ruby&#8217;s built in YAML.load function converts the template file into a Ruby Hash object which can then be looped through and there is a
+<a href="http://flori.github.com/json/">JSON gem</a> that works in the same way. The most complicated part was the validation code as I needed to be able to specify custom data types that a node could match any one of. 
+The only gem I could find for YAML validation was <a href="http://www.kuwata-lab.com/kwalify/">Kwalify</a> but that wasn&#8217;t flexible enough for what I needed so I had to write my own. I eventually managed to get a working
+validation class that worked for what I wanted and decided to extract it into it&#8217;s own gem so it could be used for other projects, and thus Grayskull was born.</p>
+
+<p>Grayskull will validate JSON and YAML files against a given schema including matching against custom types. All the details for how to create the schema are at the GitHub page, as are the instructions on how to
+install and use it. The same goes for Skeletor. Grayskull is also using Thor for the command line as well as the aforementioned JSON gem for validation.</p>
+
+<p>Check out the GitHub repositories for the source code and instructions.</p>
+
+<p><a href="http://github.com/OiNutter/skeletor/">Skeletor</a> | <a href="http://github.com/OiNutter/grayskull">Grayskull</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/09/10/a-fistful-of-documentation/">A Fistful of Documentation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-10T00:00:00+01:00" pubdate data-updated="true">Sep 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Thanks to an issue raised on Uncharted by a fellow GitHub user pointing out that a lack of good examples was stopping people see if my work was any good and worth using I&#8217;ve started going through all my projects
+and making sure they all have proper example pages and decent instructions in their README files.</p>
+
+<p>So far the following have been updated:</p>
+
+<p>Obscura - <a href="http://oinutter.github.com/Obscura/">Examples</a> | <a href="http://github.com/OiNutter/Obscura#readme">Documentation</a>
+Uncharted - <a href="http://oinutter.github.com/uncharted/">Examples</a> | <a href="http://github.com/OiNutter/uncharted#readme">Documentation</a>
+Ermintrude - <a href="http://oinutter.github.com/ermintrude/">Examples</a> | <a href="http://github.com/OiNutter/ermintrude#readme">Documentation</a>
+tipBox - <a href="http://oinutter.github.com/tipBox/">Examples</a> | <a href="http://github.com/OiNutter/tipBox#readme">Documentation</a></p>
 </div>
   
   
@@ -146,9 +213,21 @@
   </header>
 
 
-  <div class="entry-content"><p>So I recently managed to get myself a Macbook, which besides finally giving me a home computer that can cope with what I&#8217;m throwing at it, has finally enabled me to start looking at iOS development. I&#8217;ve briefly played with Android development but what little Java skills I picked up at university and was able to remember after all this time weren&#8217;t quite up to the task. So you&#8217;d think that tackling developing in Objective-C, a language I&#8217;ve never used, would be an even bigger challenge right? Well thankfully I managed to find some help, primarily from iTunes U. If anyone hasn&#8217;t checked this out yet I&#8217;d highly recommend it, there are a load of free to download lectures from several of the big universities on there (primarily US from what I could see but there were some others). The course I&#8217;ve been following is Stanford&#8217;s <a title="iTunes U Download for C193p" href="http://itunes.apple.com/us/podcast/cs193p-student-final-projects/id395605774?i=90218598">cs193p</a> course on iOS application development by Paul Hegarty. If you can get past Paul&#8217;s slightly eccentric seeming nature, anyone wanting to get into iOS development would do well to check this out. I&#8217;m only a few lectures in at the moment but the course has already succeeded in helping me finally get my head around MVC.</p>
-<p>So what do I think of Objective-C? Well I&#8217;m still in my early stages of playing with the language so this is really just a first impression but I think I&#8217;m going to like developing in it, and I certainly think I&#8217;m going to find it easier and more enjoyable than I ever did Java. It&#8217;s very different from most of the languages I&#8217;ve ever learned and certainly a huge change from the languages I use on a daily basis (PHP and Javascript). One of the first things I&#8217;ve noticed is how verbose it is. There is very much a convention of the code reading like plain english, with things such as long variable names and methods. The way methods are defined is one of the primary examples I would give of this verbosity, and of the difference of Objective-C to languages I&#8217;m used to. The following examples show a comparison of how methods are defined in Actionscript 3 (I know, I know, but it&#8217;s the only langauge I know well enough to write comparison code in that defines the return and argument types) and Objective-C.</p>
-<p><div><script src='https://gist.github.com/1171831.js?file=as3style.as'></script>
+  <div class="entry-content"><p>I recently managed to get myself a Macbook, which besides finally giving me a home computer that can cope with what I&#8217;m throwing at it, has finally enabled me to start looking at iOS development. I&#8217;ve briefly
+played with Android development but what little Java skills I picked up at university and was able to remember after all this time weren&#8217;t quite up to the task. So you&#8217;d think that tackling developing in
+Objective-C, a language I&#8217;ve never used, would be an even bigger challenge right? Well thankfully I managed to find some help, primarily from iTunes U. If anyone hasn&#8217;t checked this out yet I&#8217;d highly recommend
+it, there are a load of free to download lectures from several of the big universities on there (primarily US from what I could see but there were some others). The course I&#8217;ve been following is Stanford&#8217;s
+<a href="http://itunes.apple.com/us/podcast/cs193p-student-final-projects/id395605774?i=90218598" title="iTunes U Download for C193p">cs193p</a> course on iOS application development by Paul Hegarty. If you can get past Paul&#8217;s
+slightly eccentric seeming nature, anyone wanting to get into iOS development would do well to check this out. I&#8217;m only a few lectures in at the moment but the course has already succeeded in helping me finally
+get my head around MVC.</p>
+
+<p>So what do I think of Objective-C? Well I&#8217;m still in my early stages of playing with the language so this is really just a first impression but I think I&#8217;m going to like developing in it, and I certainly think
+I&#8217;m going to find it easier and more enjoyable than I ever did Java. It&#8217;s very different from most of the languages I&#8217;ve ever learned and certainly a huge change from the languages I use on a daily basis (PHP
+and Javascript). One of the first things I&#8217;ve noticed is how verbose it is. There is very much a convention of the code reading like plain english, with things such as long variable names and methods. The way
+methods are defined is one of the primary examples I would give of this verbosity, and of the difference of Objective-C to languages I&#8217;m used to. The following examples show a comparison of how methods are
+defined in Actionscript 3 (I know, I know, but it&#8217;s the only langauge I know well enough to write comparison code in that defines the return and argument types) and Objective-C.</p>
+
+<div><script src='https://gist.github.com/1171831.js?file=as3style.as'></script>
 <noscript><pre><code>//Actionscript 3 - Method Definitions
 
 //single argument methods
@@ -156,8 +235,11 @@ public function doubleNumber(double: number):double;
 
 //multiple argument methods
 public function multiplyNumberByAnotherNumber(double: number1,double: number2):double;</code></pre></noscript></div>
-</p>
-<p><div><script src='https://gist.github.com/1171831.js?file=objcstyle.m'></script>
+
+
+
+
+<div><script src='https://gist.github.com/1171831.js?file=objcstyle.m'></script>
 <noscript><pre><code>//Objective-C Method Definitions
 
 //single argument method
@@ -167,10 +249,22 @@ public function multiplyNumberByAnotherNumber(double: number1,double: number2):d
 - (double) multiplyNumber:(double)number1 byAnotherNumber:(double)number2;
 
 </code></pre></noscript></div>
-</p>
-<p>As you can see the single argument methods are pretty straight forward, return type at the start, followed by the method name, then the argument and it&#8217;s type listed after a semi colon (felt weird having no brackets). From what I&#8217;ve seen there doesn&#8217;t seem to be any indication of public or private with the method definitions. What seems to happen is that you just don&#8217;t define methods you want to be private in your header file, which defines the class&#8217; public api. The - at the start of the definition indicates that this is an instance method, a + indicates a static method. The primary difference in the way methods are defined is when it comes to methods with multiple arguments, where you see this splitting of the method name. The only real purpose I can see of this is that if you write your method names and variables properly it helps the code read like plain english.</p>
-<p>As for developing in XCode, so far I&#8217;m liking it. The built-in Interface Builder Gui tools are really helpful, especially when it comes to linking the controller to your views.  It&#8217;s taking me a little while to find everything in the property inspectors, possibly because what I&#8217;m looking for isn&#8217;t available for customisation but you never know. The in-line error and warning highlighting is really helpful as it makes it much easier to see where you&#8217;ve missed that semi-colon or curly brace. I think I&#8217;m really going to like the property synthesization (more on that once I&#8217;ve gone more in-depth with it) that allows the compiler to auto generate methods for you.</p>
-<p>Developing for iOS is going to present me with some new challenges that I wouldn&#8217;t normally have to contend with such as Memory Management, which is going to take some getting used to, but that&#8217;s half the fun. So hopefully before too long I&#8217;ll be posting about my new app that you can all go and buy and make me millions, (although based on how many readers I probably have  I might be lucky to make a pound!).  I promise it won&#8217;t be a new fart app!</p>
+
+
+<p>As you can see the single argument methods are pretty straight forward, return type at the start, followed by the method name, then the argument and it&#8217;s type listed after a semi colon (felt weird having no
+brackets). From what I&#8217;ve seen there doesn&#8217;t seem to be any indication of public or private with the method definitions. What seems to happen is that you just don&#8217;t define methods you want to be private in your
+header file, which defines the class&#8217; public api. The - at the start of the definition indicates that this is an instance method, a + indicates a static method. The primary difference in the way methods are
+defined is when it comes to methods with multiple arguments, where you see this splitting of the method name. The only real purpose I can see of this is that if you write your method names and variables properly
+it helps the code read like plain english.</p>
+
+<p>As for developing in XCode, so far I&#8217;m liking it. The built-in Interface Builder Gui tools are really helpful, especially when it comes to linking the controller to your views.  It&#8217;s taking me a little while to
+find everything in the property inspectors, possibly because what I&#8217;m looking for isn&#8217;t available for customisation but you never know. The in-line error and warning highlighting is really helpful as it makes it
+much easier to see where you&#8217;ve missed that semi-colon or curly brace. I think I&#8217;m really going to like the property synthesization (more on that once I&#8217;ve gone more in-depth with it) that allows the compiler to
+auto generate methods for you.</p>
+
+<p>Developing for iOS is going to present me with some new challenges that I wouldn&#8217;t normally have to contend with such as Memory Management, which is going to take some getting used to, but that&#8217;s half the fun.
+So hopefully before too long I&#8217;ll be posting about my new app that you can all go and buy and make me millions, (although based on how many readers I probably have  I might be lucky to make a pound!).  I promise
+it won&#8217;t be a new fart app!</p>
 </div>
   
   
@@ -394,64 +488,6 @@ from now on.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/">Zebedee - v0.2 - a Whole Lot of Frameworks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-04T00:00:00+00:00" pubdate data-updated="true">Mar 4<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ok, there&#8217;s only 3 more but still, it sounds more exciting. Yes, zebedee has made it to version 0.2, my first actual version increment on any of my projects, I
-feel quite proud! So what&#8217;s new in version 0.2? Well the main additions are the versions for <a href="http://script.aculo.us">Scriptaculous</a>,
-<a href="http://scripty2.com">Scripty2</a> and <a href="https://github.com/madrobby/emile">emile.js</a> Check out the readme for details on what files are needed and how to use them. 
-In addition there are also a few bug tweaks, minor reworking of the zepto version to cope with a major restructuring of zepto and the addition of a default panel
-option.</p>
-
-<p>For the large part I&#8217;ve kept the code the same on the new versions, the main changes being updating the open and close methods to use each individual library. 
-I&#8217;ve also removed functions that were duplications of methods available now available to me in Prototype for the Scriptaculous and Scripty 2 versions.  I did
-however keep my own object merge function as it merges more recursively than Prototypes version.  Emile however was much more of a challenge as it is solely an
-animation framework and therefore contains no helper methods whatsoever.  Cue a trip deep into zepto&#8217;s code and the
-<a href="https://developer.mozilla.org/en-US/docs">Mozilla Javascript Docs</a> to find out how the frameworks do things. I ended up adding a few helper methods to deal with
-manipulating the classnames, just to make life easier.</p>
-
-<p>I&#8217;ve also added in the facility for the Scripty 2 version to use Scripty 2&#8217;s ability to use css transitions where available. This is only available on linear and
-sinusoidal transitions at the moment but the library will fallback to javascript for the unavailable transitions. In the case of emile the transition calculation
-functions have to be provided as an option so I&#8217;ve added a zebedeeTransition object with a selection of functions.  The default object just includes the linear
-and sinusoidal transitions but by including the zeb-transitions.js file you can get access to all the transition types of Scripty 2.  The calculations are taken
-from Scripty 2&#8217;s included calculations that are based on Robert Penner&#8217;s original AS2 <a href="http://www.robertpenner.com/easing/">easing equations</a>.</p>
-
-<p>Coming up in version 0.3 will be a jQuery version, callbacks for when the panel opens and closes, at both the start and finish of the animation, and the option to
-keep one panel open at all times.</p>
-
-<p><a href="https://github.com/OiNutter/zebedee">Zebedee</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -471,6 +507,10 @@ keep one panel open at all times.</p>
       </li>
     
       <li class="post">
+        <a href="/2011/09/10/a-fistful-of-documentation/">A Fistful of Documentation</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
       </li>
     
@@ -480,10 +520,6 @@ keep one panel open at all times.</p>
     
       <li class="post">
         <a href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/">Tool tips, javascript animations and coding without a net</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/">Zebedee - v0.2 - A whole lot of frameworks</a>
       </li>
     
   </ul>

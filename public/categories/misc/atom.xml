@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Misc | OiNutter.co.uk]]></title>
+  <link href="http://oinutter.co.uk/categories/misc/atom.xml" rel="self"/>
+  <link href="http://oinutter.co.uk/"/>
+  <updated>2011-12-09T09:13:22+00:00</updated>
+  <id>http://oinutter.co.uk/</id>
+  <author>
+    <name><![CDATA[Will McKenzie]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Fistful of Documentation]]></title>
+    <link href="http://oinutter.co.uk/2011/09/10/a-fistful-of-documentation/"/>
+    <updated>2011-09-10T00:00:00+01:00</updated>
+    <id>http://oinutter.co.uk/2011/09/10/a-fistful-of-documentation</id>
+    <content type="html"><![CDATA[<p>Thanks to an issue raised on Uncharted by a fellow GitHub user pointing out that a lack of good examples was stopping people see if my work was any good and worth using I've started going through all my projects
+and making sure they all have proper example pages and decent instructions in their README files.</p>
+
+<p>So far the following have been updated:</p>
+
+<p>Obscura - <a href="http://oinutter.github.com/Obscura/">Examples</a> | <a href="http://github.com/OiNutter/Obscura#readme">Documentation</a>
+Uncharted - <a href="http://oinutter.github.com/uncharted/">Examples</a> | <a href="http://github.com/OiNutter/uncharted#readme">Documentation</a>
+Ermintrude - <a href="http://oinutter.github.com/ermintrude/">Examples</a> | <a href="http://github.com/OiNutter/ermintrude#readme">Documentation</a>
+tipBox - <a href="http://oinutter.github.com/tipBox/">Examples</a> | <a href="http://github.com/OiNutter/tipBox#readme">Documentation</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New Year's Resolutions]]></title>
+    <link href="http://oinutter.co.uk/2011/01/08/new-years-resolutions/"/>
+    <updated>2011-01-08T00:00:00+00:00</updated>
+    <id>http://oinutter.co.uk/2011/01/08/new-years-resolutions</id>
+    <content type="html"><![CDATA[<p>Ok, so one of my goals for this year is to really start getting involved more in the coding community.  That is the whole intention of this blog, to try and share my learning experiences and provide a home for the various projects I'm working on in my own time in the hope that other people will find them useful.  There is also the hope that more knowledgeable and more skilled folk than myself might catch wind and offer advice and help to myself.</p>
+
+<p>In actual fact this goal was something I set myself towards the end of last year, which is when I first started setting up this blog, but I never seemed to find time to actually kick it off.  I guess that's what New Year's resolutions are all about, making you take that step.  So here goes, the blog is now officially live, and you are now, hopefully, reading the inaugural post.</p>
+
+<p>I'm going to try and post as often as possible on here, probably monthly at the moment until I find enough to write about more often.  I'll also be gradually adding pages and links for my various open source playground projects, so I'll undoubtedly be posting to launch them and keep you all updated on their progress.</p>
+
+<p>Here's to 2011</p>
+
+<p>Will</p>
+]]></content>
+  </entry>
+  
+</feed>

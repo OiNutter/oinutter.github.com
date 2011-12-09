@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Gems | OiNutter.co.uk]]></title>
+  <link href="http://oinutter.co.uk/categories/gems/atom.xml" rel="self"/>
+  <link href="http://oinutter.co.uk/"/>
+  <updated>2011-12-09T09:13:22+00:00</updated>
+  <id>http://oinutter.co.uk/</id>
+  <author>
+    <name><![CDATA[Will McKenzie]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing Skeletor and Grayskull]]></title>
+    <link href="http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull/"/>
+    <updated>2011-10-20T00:00:00+01:00</updated>
+    <id>http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull</id>
+    <content type="html"><![CDATA[<p>So this month I've been playing with something new... again (I'm going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I've used Ruby a little in the Rakefiles I
+use for building my javascript projects but not really done any major work with it, until now.</p>
+
+<p>I've been trying to find a nice simple solution for setting up my project skeletons quickly and easily. I'd thought of some sort of Git repository but then I'd end up with some faffy process involving multiple
+branches for different project types and having to clone a repository and then remove the git repository in the newly cloned folder and well, this didn't sound quick or easy. Eventually I hit on the idea of a
+command line ruby gem that could use templates defining a directory structure to set up what I needed. A quick search turned up nothing that seemed to do the job, the closest thing was
+<a href="https://rubygems.org/gems/bones">Mr Bones</a> but that seemed to be entirely for Ruby projects and the template skeleton wasn't easily customisable.  I was disappointed that it existed though as I wanted to name
+my gem bones but hey, how many things am I going to write that I can actually justify calling Skeletor?</p>
+
+<p>So I started looking into what was involved in creating ruby gems. Initially I started of using <a href="https://github.com/technicalpickles/jeweler">Jeweler</a> but this created a lot of stuff I didn't really understand
+so I decided to strip everything back and just look at the structure of some gems I already used. My main source of reference was Sprockets but I also used Capistrano when trying to understand the command line
+aspect of the gem. These gave me a good source of reference for what was required in the various gem files.</p>
+
+<p>For anyone who's not created gemfiles before the basic folder structure is as follows:</p>
+
+<ul>
+<li>lib - contains 1 ruby file with the same name as the gem and a folder also named after the gem which contains all the code for the gem</li>
+<li>bin - optional folder that contains the command line executable files for the gem</li>
+<li>test - contains the unit test files</li>
+<li>a Gemfile that contains the dependencies for the gem</li>
+<li>a.gemspec file that contains the configuration details for building the gem</li>
+<li>the usual README and LICENSE files in your choice of format</li>
+</ul>
+
+
+<p>I'm not going to go into the details of each of those files.  I'd say the best thing to do is to check out the source of some of the gems that you use and that will probably give you the best understanding of
+what's required. I'm using <a href="https://github.com/wycats/thor">Thor</a> for the command line interface and <a href="https://github.com/sstephenson/hike">Hike</a> to locate the files in the 2 possible load paths.</p>
+
+<p>Skeletor supports defining a directory structure with files and folders. You can also specify include files which will be copied into the directory, either from a local file or a remote url, and define build
+tasks to be run after the directory is set up.</p>
+
+<p>The code for Skeletor is actually pretty simple. Ruby's built in YAML.load function converts the template file into a Ruby Hash object which can then be looped through and there is a
+<a href="http://flori.github.com/json/">JSON gem</a> that works in the same way. The most complicated part was the validation code as I needed to be able to specify custom data types that a node could match any one of. 
+The only gem I could find for YAML validation was <a href="http://www.kuwata-lab.com/kwalify/">Kwalify</a> but that wasn't flexible enough for what I needed so I had to write my own. I eventually managed to get a working
+validation class that worked for what I wanted and decided to extract it into it's own gem so it could be used for other projects, and thus Grayskull was born.</p>
+
+<p>Grayskull will validate JSON and YAML files against a given schema including matching against custom types. All the details for how to create the schema are at the GitHub page, as are the instructions on how to
+install and use it. The same goes for Skeletor. Grayskull is also using Thor for the command line as well as the aforementioned JSON gem for validation.</p>
+
+<p>Check out the GitHub repositories for the source code and instructions.</p>
+
+<p><a href="http://github.com/OiNutter/skeletor/">Skeletor</a> | <a href="http://github.com/OiNutter/grayskull">Grayskull</a></p>
+]]></content>
+  </entry>
+  
+</feed>
