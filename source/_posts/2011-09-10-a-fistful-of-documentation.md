@@ -17,7 +17,7 @@ and making sure they all have proper example pages and decent instructions in th
 
 So far the following have been updated:
 
-Obscura - [Examples](http://oinutter.github.com/Obscura/) | [Documentation](http://github.com/OiNutter/Obscura#readme)
-Uncharted - [Examples](http://oinutter.github.com/uncharted/) | [Documentation](http://github.com/OiNutter/uncharted#readme)
-Ermintrude - [Examples](http://oinutter.github.com/ermintrude/) | [Documentation](http://github.com/OiNutter/ermintrude#readme)
-tipBox - [Examples](http://oinutter.github.com/tipBox/) | [Documentation](http://github.com/OiNutter/tipBox#readme)
+Obscura - [Examples](http://oinutter.github.com/Obscura/) | [Documentation](http://github.com/OiNutter/Obscura#readme)  
+Uncharted - [Examples](http://oinutter.github.com/uncharted/) | [Documentation](http://github.com/OiNutter/uncharted#readme)  
+Ermintrude - [Examples](http://oinutter.github.com/ermintrude/) | [Documentation](http://github.com/OiNutter/ermintrude#readme)  
+tipBox - [Examples](http://oinutter.github.com/tipBox/) | [Documentation](http://github.com/OiNutter/tipBox#readme)  

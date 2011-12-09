@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Misc | OiNutter.co.uk]]></title>
   <link href="http://oinutter.co.uk/categories/misc/atom.xml" rel="self"/>
   <link href="http://oinutter.co.uk/"/>
-  <updated>2011-12-09T09:13:22+00:00</updated>
+  <updated>2011-12-09T09:55:42+00:00</updated>
   <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
@@ -23,9 +23,9 @@ and making sure they all have proper example pages and decent instructions in th
 
 <p>So far the following have been updated:</p>
 
-<p>Obscura - <a href="http://oinutter.github.com/Obscura/">Examples</a> | <a href="http://github.com/OiNutter/Obscura#readme">Documentation</a>
-Uncharted - <a href="http://oinutter.github.com/uncharted/">Examples</a> | <a href="http://github.com/OiNutter/uncharted#readme">Documentation</a>
-Ermintrude - <a href="http://oinutter.github.com/ermintrude/">Examples</a> | <a href="http://github.com/OiNutter/ermintrude#readme">Documentation</a>
+<p>Obscura - <a href="http://oinutter.github.com/Obscura/">Examples</a> | <a href="http://github.com/OiNutter/Obscura#readme">Documentation</a><br/>
+Uncharted - <a href="http://oinutter.github.com/uncharted/">Examples</a> | <a href="http://github.com/OiNutter/uncharted#readme">Documentation</a><br/>
+Ermintrude - <a href="http://oinutter.github.com/ermintrude/">Examples</a> | <a href="http://github.com/OiNutter/ermintrude#readme">Documentation</a><br/>
 tipBox - <a href="http://oinutter.github.com/tipBox/">Examples</a> | <a href="http://github.com/OiNutter/tipBox#readme">Documentation</a></p>
 ]]></content>
   </entry>
