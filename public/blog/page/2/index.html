@@ -9,7 +9,7 @@
   <meta name="author" content="Will McKenzie">
 
   
-  <meta name="description" content="Ok, there&#8217;s only 3 more but still, it sounds more exciting. Yes, zebedee has made it to version 0.2, my first actual version increment on any &hellip;">
+  <meta name="description" content="I&#8217;ve been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -58,12 +58,14 @@
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
+  
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
     <input type="hidden" name="q" value="site:oinutter.co.uk" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
+  
 <ul class="main-navigation">
   <li><a href="/about/">About</a></li>
   <li><a href="/">Blog</a></li>
@@ -75,6 +77,104 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/">Tool Tips, Javascript Animations and Coding Without a Net</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-28T00:00:00+01:00" pubdate data-updated="true">Mar 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell users what things
+do without them having to ask us. The only decent tool tip library I&#8217;ve ever found was <a href="http://www.nickstakenburg.com/projects/prototip/">Prototip</a> by Nick
+Stakenburg but I knew I wouldn&#8217;t be able to get away with buying a license for it so I needed to create my own. After my experiences doing the emile.js version of
+zebedee I decided to give myself a bit of a challenge and go completely frameworkless to create a standalone widget.</p>
+
+<p>First up was finding out how to do encapsulation in javascript so that I was only giving access to the methods that needed to be accessible from outside the class.
+The way this is done is to return an object with the public methods defined in it, rather than doing return this. For purposes of scope I defined the methods
+before the return statement, then returned references to them. Like so:</p>
+
+<div><script src='https://gist.github.com/1173224.js?file='></script>
+<noscript><pre><code>var toolTip = function(){
+    var _privateProp = 'foo',
+         _privateMethod = function(){
+             return 'bar';
+         },
+         publicMethod = function(){
+             return _privateProp + _privateMethod();
+         };
+ 
+    return {
+        publicMethod:publicMethod
+    }
+ 
+}</code></pre></noscript></div>
+
+
+<p>Once I had that that figured out it was down to creating the various methods and setting up the event listeners. The main requirement was handling the
+positioning of the tool tip in relation to it&#8217;s trigger element. As the position could either be fixed to a point on the trigger or follow the mouse, I ended up
+creating an object with either the element properties or the mouse coordinates and using that as the starting reference to perform the calculations from, then
+scanned the position option for one of the y position possibilities and set the top and did the same for the x position options. I later expanded this to have an
+optional element passed through which would be positioned instead of the tooltip, for use with the animations.</p>
+
+<p>I spent a lot of time going through <a href="http://prototypejs.org">prototype</a> and <a href="http://zeptojs.com">zepto</a> to find out how to do the various things I needed to do
+without the frameworks and ended up stealing various little bits of code, like the user agent regular expressions from zepto so I could determine whether the
+browser was running webkit, I also tweaked this to check for gecko 2 as well. This was so I could use css animations where available for the transitions. When it
+came to dealing with the animation, <a href="http://github.com/madrobby/emile">emile.js</a> ended up being my main source of reference, to the point that when I needed to
+expand my original animation function to be more flexible I ended up taking emile&#8217;s animation code and a few of it&#8217;s helpers and tweaking them for my own purposes.</p>
+
+<p>The biggest challenge with doing the animation was the scale transition and positioning it, particularly the css animations. With the javascript animation it was
+easy to make the box appear to grow and shrink from it&#8217;s trigger element, as I just needed to call the position method each time I adjusted the size. But with the
+css couldn&#8217;t call anything on each iteration so I had to create a test element that was a clone of the tool tip, alter that, reposition it and get the end values,
+to then pass through to the animation function. In the end it worked out but I&#8217;d like to play around with it to see if I can get something less long winded. I also
+want to have a play to see if it&#8217;s possible to make the text grow and shrink with the box, by using ems. Another interesting thing I discovered while working on the
+CSS transitions is that both Gecko 2 and Webkit have their own version of the transition end event, in Gecko 2 you can use transitionend but in webkit you need to
+call webkitTransitionEnd. Also this event will get called for each property you are animation, so in the case of the scale transition,where I was animating width,
+height,left and top, the event was being called four times. Remember to check for this when writing your handlers.</p>
+
+<p>I ended up namespacing the tool tip function inside a tipBox object, so I could add the scan method and keep them together. This means that while the calls are a
+bit longer, the functions are kept neat and secure, and shouldn&#8217;t conflict with anything.</p>
+
+<p>The scan method enables you to have a load of elements on a page (preferably a tags for semantic reasons) with a given class name that you can turn into tipBox
+triggers with one function call. All you need to do is pass the class name and the options you want to use to the method and it will scan the page and set up the
+tipBox for each one, using the title attribute to supply the text.</p>
+
+<p>I found getting the initial stages of the widget working were a lot easier than I expected, which I take to be a good sign that my understanding and knowledge are
+improving (either that or it&#8217;s easier than I thought and I&#8217;m just being a numpty). The animations presented my biggest challenge and took as much time to work
+round as everything else did to create but were without a doubt the most rewarding part of it to complete. The whole coding without a net approach forced me to
+explore and learn more, and work out my own solutions to how to do things, which was great fun, and will hopefully result in an improvement in my javascript work
+from now on.</p>
+
+<p>Code and demos are available on GitHub:</p>
+
+<p><a href="https://github.com/OiNutter/tipBox">tipBox</a> | <a href="http://oinutter.github.com/tipBox/">Demos</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -308,51 +408,9 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/01/08/new-years-resolutions/">New Year&#8217;s Resolutions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-08T00:00:00+00:00" pubdate data-updated="true">Jan 8<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ok, so one of my goals for this year is to really start getting involved more in the coding community.  That is the whole intention of this blog, to try and share my learning experiences and provide a home for the various projects I&#8217;m working on in my own time in the hope that other people will find them useful.  There is also the hope that more knowledgeable and more skilled folk than myself might catch wind and offer advice and help to myself.</p>
-
-<p>In actual fact this goal was something I set myself towards the end of last year, which is when I first started setting up this blog, but I never seemed to find time to actually kick it off.  I guess that&#8217;s what New Year&#8217;s resolutions are all about, making you take that step.  So here goes, the blog is now officially live, and you are now, hopefully, reading the inaugural post.</p>
-
-<p>I&#8217;m going to try and post as often as possible on here, probably monthly at the moment until I find enough to write about more often.  I&#8217;ll also be gradually adding pages and links for my various open source playground projects, so I&#8217;ll undoubtedly be posting to launch them and keep you all updated on their progress.</p>
-
-<p>Here&#8217;s to 2011</p>
-
-<p>Will</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -365,6 +423,10 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/02/19/new-beginnings/">&#8216;New Beginnings&#8217;</a>
+      </li>
     
       <li class="post">
         <a href="/2011/10/20/introducing-skeletor-and-grayskull/">Introducing Skeletor and Grayskull</a>
@@ -380,10 +442,6 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
     
       <li class="post">
         <a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/">Tool tips, javascript animations and coding without a net</a>
       </li>
     
   </ul>
@@ -435,7 +493,7 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
-    <a href="http://twitter.com/enechorion" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @enechorion</a>
+    <a href="http://twitter.com/enechorion" class="twitter-follow-button" data-show-count="false">Follow @enechorion</a>
   
 </section>
 
