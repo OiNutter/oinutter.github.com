@@ -88,6 +88,23 @@
 
 
   
+  <h2>2012</h2>
+
+<article>
+  
+<h1><a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a></h1>
+<time datetime="2012-05-19T10:02:00+01:00" pubdate><span class='month'>May</span> <span class='day'>19</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/categories/javascript/'>Javascript</a></span>
+</footer>
+
+
+</article>
+
+
+
+  
   <h2>2011</h2>
 
 <article>
@@ -158,6 +175,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a>
+      </li>
+    
+      <li class="post">
         <a href="/2012/02/19/new-beginnings/">'New Beginnings'</a>
       </li>
     
@@ -173,10 +194,6 @@
         <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
       </li>
     
-      <li class="post">
-        <a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -185,12 +202,12 @@
 </section>
 
 <section>
-  <h1>Github Repos</h1>
+  <h1>GitHub Repos</h1>
   <ul id="gh_repos">
     <li class="loading">Status updating...</li>
   </ul>
   
-  <a href="https://github.com/OiNutter">@OiNutter</a> on Github
+  <a href="https://github.com/OiNutter">@OiNutter</a> on GitHub
   
   <script type="text/javascript">
     $.domReady(function(){
@@ -231,8 +248,29 @@
 </section>
 
 
-
-
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/OiNutter/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/OiNutter.json?callback=display_coderwall"></script>
+  </p>
+  
+</section>
 
   
 </aside>

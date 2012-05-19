@@ -172,7 +172,7 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
         <a class="basic-alignment left" href="/2011/01/08/new-years-resolutions/" title="Previous Post: New Year's Resolutions">&laquo; New Year's Resolutions</a>
       
       
-        <a class="basic-alignment right" href="/2011/02/14/zebedee-a-multi-framework-accordion-widget/" title="next Post: Zebedee - A Multi Framework Accordion Widget">Zebedee - A Multi Framework Accordion Widget &raquo;</a>
+        <a class="basic-alignment right" href="/2011/02/14/zebedee-a-multi-framework-accordion-widget/" title="Next Post: Zebedee - A Multi Framework Accordion Widget">Zebedee - A Multi Framework Accordion Widget &raquo;</a>
       
     </p>
   </footer>
@@ -185,6 +185,10 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a>
+      </li>
     
       <li class="post">
         <a href="/2012/02/19/new-beginnings/">'New Beginnings'</a>
@@ -202,10 +206,6 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
         <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
       </li>
     
-      <li class="post">
-        <a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -214,12 +214,12 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
 </section>
 
 <section>
-  <h1>Github Repos</h1>
+  <h1>GitHub Repos</h1>
   <ul id="gh_repos">
     <li class="loading">Status updating...</li>
   </ul>
   
-  <a href="https://github.com/OiNutter">@OiNutter</a> on Github
+  <a href="https://github.com/OiNutter">@OiNutter</a> on GitHub
   
   <script type="text/javascript">
     $.domReady(function(){
@@ -260,8 +260,29 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
 </section>
 
 
-
-
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/OiNutter/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/OiNutter.json?callback=display_coderwall"></script>
+  </p>
+  
+</section>
 
   
 </aside>

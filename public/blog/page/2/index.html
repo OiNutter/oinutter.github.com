@@ -9,7 +9,7 @@
   <meta name="author" content="Will McKenzie">
 
   
-  <meta name="description" content="I&#8217;ve been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell &hellip;">
+  <meta name="description" content="It&#8217;s been a busy few months so I&#8217;m a bit behind on my posting so hopefully I can get back on schedule now. Once again I&#8217;ve been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,124 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-10T00:00:00+01:00" pubdate data-updated="true">Jun 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&#8217;s been a busy few months so I&#8217;m a bit behind on my posting so hopefully I can get back on schedule now. Once again I&#8217;ve been working on another javascript
+library, this time a canvas based image manipulation library called Obscura.</p>
+
+<p>t all started with the arrival on the scene of <a href="http://microjs.com">microjs.com</a> by <a href="http://mir.aculo.us">Thomas Fuchs</a> and <a href="http://dustindiaz.com/">Dustin Diaz</a>.
+For those of you who haven&#8217;t heard of it, <a href="http://microjs.com">microjs.com</a> is an index of micro frameworks curated by Thomas and Dustin. The requirements for
+inclusion on the site are as follows:</p>
+
+<ul>
+<li>Must be written in javascript</li>
+<li>Must be less than 5k minified and gzipped</li>
+<li>Must be focused on one thing, rather than being a library of all trades</li>
+<li>Must have no dependencies</li>
+</ul>
+
+
+<p>I liked the idea of this and was keen to get a listing on there as a step towards my goal of becoming more known in the community. Unfortunately none of my
+previous projects met the requirements, so if I wanted in I needed to come up with something else. I&#8217;d seen a tutorial in .Net magazine on image editing using
+javascript and canvas and decided I could port my existing PHP ImageHandler class to javascript using canvas as a base.</p>
+
+<p>I also decided to use this as an oppurtunity to try out <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a> which I&#8217;ve been hearing a lot about. Once
+again, for those out of the loop, CoffeeScript is a lot like <a href="http://sass-lang.com">Sass</a>, which I&#8217;ve mentioned previously, but for Javascript. It&#8217;s a language
+that compiles to javascript, so you can write your code in CoffeeScript&#8217;s clearer, more verbose syntax, then compile it to normal working syntax.</p>
+
+<p>I&#8217;m not normally a fan of stuff like this as I&#8217;ve never really seen the point, if you want to write javascript just learn javascript. However both Sass and
+CoffeeScript have convinced me that there are benefits to these things. In the case of CoffeeScript the automatic handling of things like scope and variable
+declaration make developing a lot easier and safer. The automatic wrapping in a function did cause me some confusion at first, which I&#8217;ll discuss later, but does
+prevent any unnecessary pollution of the global scope and can be turned off with a compile option. I am however still adjusting to the braceless syntax which I&#8217;m
+not too keen on. I appreciate that it makes the code cleaner and smaller but as a php developer predominantly I&#8217;ve grown used to curly braces or at the very least
+some kind of ruby-esque closing statement.</p>
+
+<p>I decided to stick with a small selection of basic image manipulation functions to start with. As I was using my existing PHP library as a starting point I had a
+ready supplied list of functions to use, with the basic logic all worked out. All I needed to do was work out how to write the functions in CoffeeScript and
+understand how to apply them with canvas. The latter proved to be the more challenging task for the most part. Particularly due to the inconsistencies in how the
+W3C&#8217;s canvas spec is implemented in Gecko and Webkit. The main issue I came across was when working on the rotate function. I had been using the
+globalCompositeMethod copy to overwrite the existing canvas data which worked fine in Firefox but in Safari and Chrome &#8220;copy&#8221; actually overlays the new data onto
+the old, so the original, unrotated image was still visible. I ended up having to create an internal canvas object as a kind of staging area so all manipulations
+were performed on that before the finished article was sent to the target canvas.</p>
+
+<p>By far my favourite CoffeeScript feature when writing this was the way it handles scope and the ability to reference the parent object easily when writing the
+code made life considerably easier, particularly as all the functions perform operations on internal objects. For any of you who haven&#8217;t played with CoffeeScript
+yet or aren&#8217;t familiar with the scope handling, it works like this:</p>
+
+<div><script src='https://gist.github.com/1084753.js?file=example.coffee'></script>
+<noscript><pre><code>object -&gt;
+    @prop = 'foo'
+    @bar = (newProp) =&gt;
+        @prop = newProp</code></pre></noscript></div>
+
+
+<p>Which will compile to this</p>
+
+<div><script src='https://gist.github.com/1084753.js?file=compiled.js'></script>
+<noscript><pre><code>(function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  object(function() {
+    this.prop = 'foo';
+    return this.bar = __bind(function(newProp) {
+      return this.prop = newProp;
+    }, this);
+  });
+}).call(this);</code></pre></noscript></div>
+
+
+<p>Notice that CoffeeScript adds the __bind function which is then used to make sure the function executes in the object scope. Granted you can write this yourself
+but the syntax of the CoffeeScript is a lot simpler and clearer as to what is going on.</p>
+
+<p>After a few weeks of playing around I got Obscura into a state I was happy with for a first version release. It passed all the tests for inclusion on
+<a href="http://microjs.com">microjs.com</a>, coming in at 1.5K compressed and gzipped, so I submitted it for inclusion and got it accepted. Obviously I was pretty pleased
+about this as it was one of the main reasons for writing the library in the first place and it was great that my work was considered good enough to be accepted
+onto the site but it didn&#8217;t stop there. Later in the same week I got an email from <a href="http://softpedia.com/">Softpedia</a> informing me that one of my projects had
+been added to their Scripts section. At first I had no idea what they were talking about as I hadn&#8217;t submitted anything to Softpedia.Upon further investigation it
+would appear that they&#8217;ve been scanning other websites and finding libraries and widgets to add to their new Scripts download section. The project they&#8217;d added
+was Obscura so what I&#8217;m guessing has happened is they&#8217;ve been scanning through microjs.com and adding projects from there. It also appears they&#8217;ve been using
+those projects as starting points to find other projects as throughout the day I got more emails telling me they&#8217;d added other projects that are on my blog and
+github account. By the end of it 7 of my projects had been added; <a href="http://github.com/OiNutter/Obscura/">Obscura</a>, <a href="http://github.com/OiNutter/uncharted/">Uncharted</a>,
+<a href="http://github.com/OiNutter/zebedee">Zebedee</a>, <a href="http://github.com/OiNutter/ermintrude">ermintrude</a>, <a href="http://github.com/OiNutter/Easel">Easel</a>,
+<a href="http://github.com/OiNutter/tipBox">tipBox</a> and <a href="http://github.com/OiNutter/delorean">Delorean</a>. For me this was a huge breakthrough in terms of what I&#8217;ve been
+trying to achieve this year as it&#8217;s providing more avenues for people to find out about my work and hopefully use it and help improve it. It&#8217;s also resulted in
+people starting to watch my GitHub repositories so hopefully I can build on this and keep raising my profile as the year goes on.</p>
+
+<p>For now feel free to check out Obscura on GitHub for the code and demos</p>
+
+<p><a href="http://github.com/OiNutter/Obscura">Obscura</a> | <a href="http://oinutter.github.com/Obscura">Demos</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -352,62 +470,6 @@ checkout the project page at the link below for more information and links to th
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/02/13/easel-an-as3-colour-manipulation-library/">Easel - an AS3 Colour Manipulation Library</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-13T00:00:00+00:00" pubdate data-updated="true">Feb 13<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Well my post for this month was going to be a tutorial on customising Flash UI components, but unfortunately doing it properly is going to take more time than I
-have available to me at the moment so I&#8217;m just going to keep working on that in the background and will post it when it&#8217;s ready.  In the meantime I&#8217;m going to
-put up more information about some of my Open Source projects and hopefully get them better known, which in turns should, I hope, accomplish one of the aims of
-this blog.  Getting people to help improve my stuff and, by proxy, improving my skills and knowledge.</p>
-
-<p>So first up, purely by virtue of being my most recent, is Easel, a colour (I&#8217;m english, so yes it is spelt right!) manipulation library for Actionscript 3.  Easel
-came about from a need to take a randomly generated colour and get colours that would work well with it for dynamically generated objects in a recent project at
-work.  At first I just managed to find the <a href="http://lab.revoke.ca/2009/04/as3-color-functions/">Tint library by RevokeLabs</a> which provided me with a darken
-function which did the trick for me.  However I then needed more, so I managed to find an algorithm to calculate the complementary colour on a forum somewhere,
-which I&#8217;m afraid I can&#8217;t remember, but have subsequently replaced so I don&#8217;t feel too bad about not crediting it.  From there I had the idea of replicating the
-colour manipulation functions of <a href="" title="http://sass-lang.com/">Sass</a>, which I&#8217;d read about in a recent .Net tutorial, but hadn&#8217;t had a chance to play around with
-(I have now and will no doubt be writing more about this down the line, watch this space!).</p>
-
-<p>I was struggling to find the algorithms to accomplish what I needed in AS3 so I ended up pulling the source for Sass from GitHub and wading through that to find
-what I needed.  I then proceeded to rewrite the functions to AS3 which involved rewriting the original manipulation functions from the Tint library as they relied
-on manipulating the RGB values whereas Sass was working with the HSL.  I did however keep the getHex and getRGB functions as there seemed to be no real difference
-in them.  The upside to this approach was that I learnt a bit about colour manipulations, and got more experience with Ruby code, always a good thing!</p>
-
-<p>Please check out the link below or on the right for the project page which contains links to the GitHub source and the Demo.</p>
-
-<p><a href="https://github.com/OiNutter/Easel">Easel</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -425,6 +487,10 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a>
+      </li>
+    
+      <li class="post">
         <a href="/2012/02/19/new-beginnings/">&#8216;New Beginnings&#8217;</a>
       </li>
     
@@ -440,10 +506,6 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
         <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
       </li>
     
-      <li class="post">
-        <a href="/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/">Obscura - Canvas, CoffeeScript and Micro Frameworks</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -452,12 +514,12 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
 </section>
 
 <section>
-  <h1>Github Repos</h1>
+  <h1>GitHub Repos</h1>
   <ul id="gh_repos">
     <li class="loading">Status updating&#8230;</li>
   </ul>
   
-  <a href="https://github.com/OiNutter">@OiNutter</a> on Github
+  <a href="https://github.com/OiNutter">@OiNutter</a> on GitHub
   
   <script type="text/javascript">
     $.domReady(function(){
@@ -498,8 +560,29 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
 </section>
 
 
-
-
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/OiNutter/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/OiNutter.json?callback=display_coderwall"></script>
+  </p>
+  
+</section>
 
   
 </aside>
