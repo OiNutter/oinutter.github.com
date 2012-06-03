@@ -9,7 +9,7 @@
   <meta name="author" content="Will McKenzie">
 
   
-  <meta name="description" content="Well my post for this month was going to be a tutorial on customising Flash UI components, but unfortunately doing it properly is going to take more &hellip;">
+  <meta name="description" content="Okay, so this month I finally got chance to delve into Python. I&#8217;m using version 3.1, as obviously there&#8217;s no point learning something &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,124 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/02/26/python-wrangling-getting-to-know-the-beast/">Python Wrangling - Getting to Know the Beast</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-26T00:00:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Okay, so this month I finally got chance to delve into Python. I&#8217;m using version 3.1, as obviously there&#8217;s no point learning something thats going to be obsolete
+fairly soon, although this did make finding examples and stuff harder as the majority of stuff I found was for Python 2.</p>
+
+<p>While I know python is a popular, and very capable, web programming language, I&#8217;m not really interested in that side of it. As far as I&#8217;m concerned I&#8217;ve got PHP
+which I use for regular development, and am pretty competent with, and Ruby on Rails, which I&#8217;m starting to try and get my head round, I neither need nor want yet
+another contender vying for position as my chosen tool when it comes to developing for the web. What I am very interested in python for, is desktop apps. From
+what I&#8217;ve heard python is a pretty good cross platform language with good tie-ins to the operating system and file structure. It also looks a hell of a lot
+simpler than C++, which I have tried to master on a few occasions and only ever succeeded in achieving basic competency with.</p>
+
+<p>Now if you&#8217;ve seen any of my other posts you&#8217;ll know that I tend to do a lot of work with Javascript, and also know Actionscript, so you may be wondering why I
+don&#8217;t just use Air for building desktop apps. I&#8217;ve used Air before to build small desktop widgets using Actionscript, and will undoubtedly at some point end up
+playing around with it a bit more, but for users to run Air apps they&#8217;re required to download the Air runtime, and the last time I looked the Linux version was a
+bit behind. What I&#8217;m hoping to get with Python is something I can write once, maybe with some os specific tweaks, and compile to a valid executable/installer for
+any system.</p>
+
+<p>So onto my first impressions. For someone that is used to languages like PHP, Javascript and Actionscript, Python is something of a shock to the system. The lack
+of curly braces to enclose functions and statements was something I was starting to come to terms with from Ruby, but the lack of any form of closing statement
+made reading through the code a somewhat strange experience. My learning project is a file renaming utility so I found the os functions, particularly os.rename()
+really useful. I started off just building the app as a command line script, then once I&#8217;d got that basic renaming functionality figured out, (not really that
+difficult when it&#8217;s just a call to one built in function), I started looking into adding a gui.</p>
+
+<p>I ended up going with PyQT4, mainly because it was the only free, cross browser GUI framework that worked with Python 3. The hardest part about getting it all
+working was finding out how to actually create the window and use the ui. I&#8217;m using the following code:</p>
+
+<p>Where main.ui is my layout xml file. One of the things I liked about PyQT was that it came with a GUI designer utility which lets me just layout the gui as I
+wanted it and save it to xml. Makes building the layout much easier. At the moment I&#8217;ve not really done much more than set up a basic gui with ultra simple file
+renaming (you select a file, type a new name and hit the big rename button) but I&#8217;m intending to add batch renaming with various renaming actions such as regular
+expressions, substringing, extension changing and more.</p>
+
+<p>The main challenge at the moment is understanding how to use PyQt as I&#8217;m afraid the documentation isn&#8217;t particularly novice friendly, being more of a reference
+library. Some examples would be handy, especially as I struggled to find anything on google. I think when I&#8217;m a bit more comfortable with things I&#8217;ll post some
+examples/tutorials. I&#8217;ll also write a bit more about my python experiences as I get to spend more time with it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/02/14/zebedee-a-multi-framework-accordion-widget/">Zebedee - a Multi Framework Accordion Widget</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-14T00:00:00+00:00" pubdate data-updated="true">Feb 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Zebedee is an accordion widget for multiple frameworks. At the moment it is only at V0.1, which only supports <a href="http://zeptojs.com">zepto.js</a>, but I will be adding
+support for various different animation frameworks as I have time. I wanted to play around with Zepto, <a href="http://mir.aculo.us">Thomas Fuchs</a>&#39; new mobile javascript
+framework and decided it would be fun to do an accordion widget to see if I could use the CSS3 transitions to animate the opening and closing of the accordion
+sections.</p>
+
+<p>It was good fun having to go back to basics on it as I was used to having Prototype and Class.Create() to work with when creating new objects. Thankfully zepto
+provided a few good utility functions to keep my code neat and simple. The jQuery like chaining also came in handy in that regard.</p>
+
+<p>I&#8217;ve purposefully kept the functionality simple, as I don&#8217;t really think it needs to be all singing, all dancing! At the moment it supports vertical and
+horizontal accordions and I will probably be adding the ability to set the the actual trigger event for the accordion to be bound to a child of the header object.
+Also the duration, transition type and trigger event are all configurable, as well as the class names assigned to the various components.</p>
+
+<p>I should hopefully be adding support for Scriptaculous in the next month or so, and Scripty 2 should follow soon after that, so watch this space. In the meantime
+checkout the project page at the link below for more information and links to the GitHub source. I&#8217;ll also be popping up some demo pages when I get the chance.</p>
+
+<p><a href="https://github.com/OiNutter/zebedee">Zebedee</a> | <a href="http://oinutter.github.com/zebedee">Demos</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -193,6 +311,10 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2012/06/03/announcing-coderwall-for-ios/">Announcing Coderwall for iOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a>
       </li>
     
@@ -201,15 +323,11 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
       </li>
     
       <li class="post">
+        <a href="/2011/11/17/why-i-love-regular-expressions%21/">Why I Love Regular Expressions!</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/10/20/introducing-skeletor-and-grayskull/">Introducing Skeletor and Grayskull</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/09/10/a-fistful-of-documentation/">A Fistful of Documentation</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/">Objective-C and iOS Development - Taking My First Steps</a>
       </li>
     
   </ul>

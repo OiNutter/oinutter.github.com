@@ -1,0 +1,426 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Depe",
+				"DependencyFile"
+			],
+			[
+				"D",
+				"DependencyFile"
+			],
+			[
+				"relat",
+				"relativize_root_path"
+			],
+			[
+				"re",
+				"relative_pathname"
+			],
+			[
+				"requir",
+				"required_assets"
+			],
+			[
+				"depen",
+				"dependency_paths"
+			],
+			[
+				"logic",
+				"logical_path"
+			],
+			[
+				"un",
+				"unregister_bundle_processor"
+			],
+			[
+				"regi",
+				"register_bundle_processor"
+			],
+			[
+				"mime",
+				"mime_type"
+			],
+			[
+				"regist",
+				"register_preprocessor"
+			],
+			[
+				"abs",
+				"abstractmethod"
+			],
+			[
+				"locals",
+				"locals_keys"
+			],
+			[
+				"scr",
+				"scrollOffsetX"
+			],
+			[
+				"current",
+				"currentBookmarks"
+			],
+			[
+				"update",
+				"updateBookmarkList"
+			],
+			[
+				"curr",
+				"currentBookmarks"
+			],
+			[
+				"bookmar",
+				"bookmark-count"
+			],
+			[
+				"cu",
+				"currentBookmarks"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"cur",
+				"currentBookmarks"
+			],
+			[
+				"curre",
+				"currentIndex"
+			],
+			[
+				"login",
+				"loginDialog"
+			],
+			[
+				"resz",
+				"resizeOverlay"
+			],
+			[
+				"up",
+				"updateBookmarkList"
+			],
+			[
+				"bookmark",
+				"bookmark-list"
+			],
+			[
+				"filter",
+				"filteredBookmarks"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"tag",
+				"tagList"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"Boo",
+				"BookmarkView"
+			],
+			[
+				"Book",
+				"BookmarkCollection"
+			],
+			[
+				"hei",
+				"height"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"packag",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/asset_attributes.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/assets.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/processed_asset.rb",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/static_asset.rb",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/bundled_asset.rb",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/asset.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/processor.py",
+		"/Users/will/Documents/workspace/rivets/rivets/processing.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/environment.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/__init__.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/environment.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/base.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/base.py",
+		"/Users/will/Documents/workspace/rivets/rivets/paths.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/paths.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/engines.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/errors.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/errors.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/processor.rb",
+		"/Users/will/Documents/workspace/uglipyjs/uglipyjs/__init__.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/context.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/context.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/directive_processor.rb",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/engines.rb",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/processing.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/charset_normalizer.py",
+		"/Users/will/Documents/workspace/rivets/rivets/safety_colons.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/safety_colons.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/mime.py",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/charset_normalizer.rb",
+		"/Users/will/Documents/workspace/rivets/rivets/utils.py",
+		"/Users/will/Documents/workspace/exoticvetmedicine/exoticvetmedicine.sublime-project",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/will/Documents/workspace/sprockets/lib/sprockets/mime.rb",
+		"/Users/will/Documents/workspace/shift/LICENSE",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/models/Bookmark.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/Bookmark.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/app.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/navigation.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/LoginDialog.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_dialogs.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/scripts/add_user.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/BookmarkView.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_layout.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/index.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/about.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/Routes.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/list.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_footer.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/config.ru",
+		"/Users/will/Documents/workspace/exoticvetmedicine/vendor/javascripts/backbone.min.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/ErrorDialog.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/ConfirmDialog.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/BookmarkCollection.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/mongo.log",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/models/User.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/AddDialog.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/exoticvetmedicine.sublime-workspace",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_colours.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_navigation.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_header.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_forms.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_typography.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/header.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/_mixins.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/layout.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/vendor/javascripts/moment.min.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/sass/screen.css.scss",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/footer.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine/vendor/javascripts/underscore.min.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine/vendor/javascripts/zepto.min.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/about.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/vendor/javascripts/backbone.paginator.min.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine/Gemfile",
+		"/Users/will/Documents/workspace/ShareCapoeira/scripts/setup_test_data.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/config/mongo_config.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/layout.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/User.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/Dialog.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/AddBookmarkView.js.coffee",
+		"/Users/will/Documents/workspace/ShareCapoeira/app/assets/coffee/app.js.coffee",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/index.rb",
+		"/Users/will/Documents/workspace/ShareCapoeira/app/assets/sass/_forms.scss",
+		"/Users/will/Documents/workspace/ShareCapoeira/app/models/Event.rb",
+		"/Users/will/Documents/workspace/ShareCapoeira/app.rb",
+		"/Users/will/Documents/workspace/ShareCapoeira/app/models/Group.rb",
+		"/Users/will/Documents/workspace/exoticvetmedicine/views/templates/add-dialog.mustache",
+		"/Users/will/Documents/workspace/exoticvetmedicine.co.uk/vendor/javascripts/mustache.min.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine.co.uk/app.js",
+		"/Users/will/Documents/workspace/exoticvetmedicine.co.uk/routes/index.js",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/ZenCoding/zen-coding.sublime-settings",
+		"/Users/will/Library/Application Support/Sublime Text 2/Packages/ZenCoding/README.creole"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"*.*",
+			"lower",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"self._required_assets",
+			"_required_assets",
+			"coder",
+			"length",
+			"object_id",
+			"attributes_for",
+			"expire_index!",
+			"cache_key_for",
+			"\\t",
+			"  ",
+			"__LINE__",
+			"  ",
+			"lowercase",
+			"$('#panels').anim({'margin-left'",
+			"grey",
+			"Dialog",
+			"console",
+			"create",
+			"115px",
+			"white",
+			"$green"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"self.expire_index()",
+			"  ",
+			"\\t",
+			"LINE",
+			"\\t",
+			"lower",
+			"$orange"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"paths",
+				"rivets/paths.py"
+			],
+			[
+				"environment",
+				"rivets/environment.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Objective-C | OiNutter.co.uk]]></title>
   <link href="http://oinutter.co.uk/categories/objective-c/atom.xml" rel="self"/>
   <link href="http://oinutter.co.uk/"/>
-  <updated>2012-05-19T14:21:31+01:00</updated>
+  <updated>2012-06-03T14:42:04+01:00</updated>
   <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Announcing Coderwall for iOS]]></title>
+    <link href="http://oinutter.co.uk/2012/06/03/announcing-coderwall-for-ios/"/>
+    <updated>2012-06-03T14:22:00+01:00</updated>
+    <id>http://oinutter.co.uk/2012/06/03/announcing-coderwall-for-ios</id>
+    <content type="html"><![CDATA[<p>After 2 months of wrestling with the App Store review process, I am proud to announce the release of my first iOS app, <a href="http://oinutter.github.com/Coderwall-iOS">Coderwall</a>. The app accesses <a href="http://coderwall.com">Coderwall.com</a>'s API and pulls down all your profile information and your list of achievements etc, and displays it in a native format, giving you access to your, and your friends', information on the go.</p>
+
+<p>At the moment the app is a very basic read only affair as Coderwall's API is read only, but I know they have plans to expand on the API, particularly to enable access to some of the new features they are adding to the main site, and as they do I'll be updating the app to take advantage of those.</p>
+
+<p>The app is free to download for both iPhone and iPad, and also the source is available on <a href="https://github.com/OiNutter/Coderwall-iOS">GitHub</a> for anyone wanting to take a look and use it to help them get started in app development. The app was very much a learning exercise for me, which is why I've made it free to download and open sourced it, in the hope that the lessons I've learned will benefit someone else.</p>
+
+<p>Also if you have any issues, or feature requests, you can use GitHub to tell me about them, or even submit a pull request for them.</p>
+
+<p>There will also be a Windows Phone version released, hopefully, in the next few months, will post more about that when it is released.</p>
+
+<p><a href="http://oinutter.github.com/Coderwall-iOS">Coderwall-iOS</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Objective-C and iOS Development - Taking My First Steps]]></title>
