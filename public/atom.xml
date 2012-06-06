@@ -4,7 +4,7 @@
   <title><![CDATA[OiNutter.co.uk]]></title>
   <link href="http://oinutter.co.uk/atom.xml" rel="self"/>
   <link href="http://oinutter.co.uk/"/>
-  <updated>2012-06-03T14:42:04+01:00</updated>
+  <updated>2012-06-06T08:45:55+01:00</updated>
   <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
@@ -26,9 +26,12 @@
 
 <p>Also if you have any issues, or feature requests, you can use GitHub to tell me about them, or even submit a pull request for them.</p>
 
-<p>There will also be a Windows Phone version released, hopefully, in the next few months, will post more about that when it is released.</p>
+<p>There will be a Windows Phone version released, hopefully, in the next few months, will post more about that when it is released, and once I&#8217;ve got that out of the way I&#8217;m going to be looking at adding more functionality to both apps, so watch this space!</p>
 
-<p><a href="http://oinutter.github.com/Coderwall-iOS">Coderwall-iOS</a></p>
+<p>I&#8217;d like to say a big thanks to the guys at Coderwall, particularly Matt, who have been really helpful and supportive of me while I&#8217;ve been building this App, particularly in making extra information available to me via the API and in offering to add more functionality so we can make the app even better. Thanks very much guys, hope you like it!</p>
+
+<p><a href="http://oinutter.github.com/Coderwall-iOS">Coderwall-iOS</a> |
+<a href="http://itunes.apple.com/us/app/coderwall/id520035280?ls=1&amp;mt=8">On The App Store</a></p>
 ]]></content>
   </entry>
   
@@ -83,15 +86,6 @@ project I&#8217;m working on with Ruby and Sinatra and finding that really snapp
 looking to bring CoffeeScript into that as much as possible but my server side work is now going to be either Python or Ruby, both of which I&#8217;m having a lot of fun
 with at the moment. As for my choice of data storage? I think it&#8217;s safe to say MongoDB is here to stay on that front, although I will miss working out clever SQL
 queries.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why I Love Regular Expressions!]]></title>
-    <link href="http://oinutter.co.uk/2011/11/17/why-i-love-regular-expressions%21/"/>
-    <updated>2011-11-17T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/11/17/why-i-love-regular-expressions!</id>
-    <content type="html"><![CDATA[<p>This may sound like a strange statement but I honestly find regular expressions relaxing.</p>
 ]]></content>
   </entry>
   

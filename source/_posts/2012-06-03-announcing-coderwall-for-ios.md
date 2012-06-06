@@ -16,6 +16,9 @@ The app is free to download for both iPhone and iPad, and also the source is ava
 
 Also if you have any issues, or feature requests, you can use GitHub to tell me about them, or even submit a pull request for them.
 
-There will also be a Windows Phone version released, hopefully, in the next few months, will post more about that when it is released.
+There will be a Windows Phone version released, hopefully, in the next few months, will post more about that when it is released, and once I've got that out of the way I'm going to be looking at adding more functionality to both apps, so watch this space!
 
-[Coderwall-iOS](http://oinutter.github.com/Coderwall-iOS)
+I'd like to say a big thanks to the guys at Coderwall, particularly Matt, who have been really helpful and supportive of me while I've been building this App, particularly in making extra information available to me via the API and in offering to add more functionality so we can make the app even better. Thanks very much guys, hope you like it!
+
+[Coderwall-iOS](http://oinutter.github.com/Coderwall-iOS) | 
+[On The App Store](http://itunes.apple.com/us/app/coderwall/id520035280?ls=1&mt=8)

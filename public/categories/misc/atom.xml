@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Misc | OiNutter.co.uk]]></title>
   <link href="http://oinutter.co.uk/categories/misc/atom.xml" rel="self"/>
   <link href="http://oinutter.co.uk/"/>
-  <updated>2012-06-03T14:42:04+01:00</updated>
+  <updated>2012-06-06T08:45:55+01:00</updated>
   <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Why I Love Regular Expressions!]]></title>
-    <link href="http://oinutter.co.uk/2011/11/17/why-i-love-regular-expressions%21/"/>
-    <updated>2011-11-17T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/11/17/why-i-love-regular-expressions!</id>
-    <content type="html"><![CDATA[<p>This may sound like a strange statement but I honestly find regular expressions relaxing.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Fistful of Documentation]]></title>
