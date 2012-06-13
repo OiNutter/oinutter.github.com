@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Python Wrangling - Getting To Know The Beast - OiNutter.co.uk</title>
+  <meta name="author" content="Will McKenzie">
+
+  
+  <meta name="description" content="Okay, so this month I finally got chance to delve into Python. I'm using version 3.1, as obviously there's no point learning something thats going to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OiNutter.co.uk" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27616653-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OiNutter.co.uk</a></h1>
+  
+    <h2>What semi-colon?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:OiNutter.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about/">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Python Wrangling - Getting to Know the Beast</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-26T00:00:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Okay, so this month I finally got chance to delve into Python. I'm using version 3.1, as obviously there's no point learning something thats going to be obsolete
+fairly soon, although this did make finding examples and stuff harder as the majority of stuff I found was for Python 2.</p>
+
+<p>While I know python is a popular, and very capable, web programming language, I'm not really interested in that side of it. As far as I'm concerned I've got PHP
+which I use for regular development, and am pretty competent with, and Ruby on Rails, which I'm starting to try and get my head round, I neither need nor want yet
+another contender vying for position as my chosen tool when it comes to developing for the web. What I am very interested in python for, is desktop apps. From
+what I've heard python is a pretty good cross platform language with good tie-ins to the operating system and file structure. It also looks a hell of a lot
+simpler than C++, which I have tried to master on a few occasions and only ever succeeded in achieving basic competency with.</p>
+
+<p>Now if you've seen any of my other posts you'll know that I tend to do a lot of work with Javascript, and also know Actionscript, so you may be wondering why I
+don't just use Air for building desktop apps. I've used Air before to build small desktop widgets using Actionscript, and will undoubtedly at some point end up
+playing around with it a bit more, but for users to run Air apps they're required to download the Air runtime, and the last time I looked the Linux version was a
+bit behind. What I'm hoping to get with Python is something I can write once, maybe with some os specific tweaks, and compile to a valid executable/installer for
+any system.</p>
+
+<p>So onto my first impressions. For someone that is used to languages like PHP, Javascript and Actionscript, Python is something of a shock to the system. The lack
+of curly braces to enclose functions and statements was something I was starting to come to terms with from Ruby, but the lack of any form of closing statement
+made reading through the code a somewhat strange experience. My learning project is a file renaming utility so I found the os functions, particularly os.rename()
+really useful. I started off just building the app as a command line script, then once I'd got that basic renaming functionality figured out, (not really that
+difficult when it's just a call to one built in function), I started looking into adding a gui.</p>
+
+<p>I ended up going with PyQT4, mainly because it was the only free, cross browser GUI framework that worked with Python 3. The hardest part about getting it all
+working was finding out how to actually create the window and use the ui. I'm using the following code:</p>
+
+<p>Where main.ui is my layout xml file. One of the things I liked about PyQT was that it came with a GUI designer utility which lets me just layout the gui as I
+wanted it and save it to xml. Makes building the layout much easier. At the moment I've not really done much more than set up a basic gui with ultra simple file
+renaming (you select a file, type a new name and hit the big rename button) but I'm intending to add batch renaming with various renaming actions such as regular
+expressions, substringing, extension changing and more.</p>
+
+<p>The main challenge at the moment is understanding how to use PyQt as I'm afraid the documentation isn't particularly novice friendly, being more of a reference
+library. Some examples would be handy, especially as I struggled to find anything on google. I think when I'm a bit more comfortable with things I'll post some
+examples/tutorials. I'll also write a bit more about my python experiences as I get to spend more time with it.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Will McKenzie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-26T00:00:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/python/'>Python</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast/" data-via="enechorion" data-counturl="http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2011/02/14/zebedee-a-multi-framework-accordion-widget/" title="Previous Post: Zebedee - A Multi Framework Accordion Widget">&laquo; Zebedee - A Multi Framework Accordion Widget</a>
+      
+      
+        <a class="basic-alignment right" href="/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/" title="Next Post: Zebedee - v0.2 - A whole lot of frameworks">Zebedee - v0.2 - A whole lot of frameworks &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/06/03/announcing-coderwall-for-ios/">Announcing Coderwall for iOS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/02/19/new-beginnings/">'New Beginnings'</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/10/20/introducing-skeletor-and-grayskull/">Introducing Skeletor and Grayskull</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/09/10/a-fistful-of-documentation/">A Fistful of Documentation</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul><li><a class='category' href='/categories/actionscript/'>Actionscript</a></li><li><a class='category' href='/categories/gems/'>Gems</a></li><li><a class='category' href='/categories/javascript/'>Javascript</a></li><li><a class='category' href='/categories/misc/'>Misc</a></li><li><a class='category' href='/categories/objective-c/'>Objective-C</a></li><li><a class='category' href='/categories/python/'>Python</a></li><li><a class='category' href='/categories/ruby/'>Ruby</a></li><li><a class='category' href='/categories/ios/'>iOS</a></li></ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/OiNutter">@OiNutter</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'OiNutter',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("enechorion", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/enechorion" class="twitter-follow-button" data-show-count="false">Follow @enechorion</a>
+  
+</section>
+
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/OiNutter/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/OiNutter.json?callback=display_coderwall"></script>
+  </p>
+  
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Will McKenzie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f0416cdf5a1f51b02000003');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+</body>
+</html>

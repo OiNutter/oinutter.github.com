@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Obscura - Canvas, CoffeeScript and Micro Frameworks - OiNutter.co.uk</title>
+  <meta name="author" content="Will McKenzie">
+
+  
+  <meta name="description" content="It's been a busy few months so I'm a bit behind on my posting so hopefully I can get back on schedule now. Once again I've been working on another &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OiNutter.co.uk" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27616653-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OiNutter.co.uk</a></h1>
+  
+    <h2>What semi-colon?</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:OiNutter.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about/">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Obscura - Canvas, CoffeeScript and Micro Frameworks</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-10T00:00:00+01:00" pubdate data-updated="true">Jun 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>It's been a busy few months so I'm a bit behind on my posting so hopefully I can get back on schedule now. Once again I've been working on another javascript
+library, this time a canvas based image manipulation library called Obscura.</p>
+
+<p>t all started with the arrival on the scene of <a href="http://microjs.com">microjs.com</a> by <a href="http://mir.aculo.us">Thomas Fuchs</a> and <a href="http://dustindiaz.com/">Dustin Diaz</a>.
+For those of you who haven't heard of it, <a href="http://microjs.com">microjs.com</a> is an index of micro frameworks curated by Thomas and Dustin. The requirements for
+inclusion on the site are as follows:</p>
+
+<ul>
+<li>Must be written in javascript</li>
+<li>Must be less than 5k minified and gzipped</li>
+<li>Must be focused on one thing, rather than being a library of all trades</li>
+<li>Must have no dependencies</li>
+</ul>
+
+
+<p>I liked the idea of this and was keen to get a listing on there as a step towards my goal of becoming more known in the community. Unfortunately none of my
+previous projects met the requirements, so if I wanted in I needed to come up with something else. I'd seen a tutorial in .Net magazine on image editing using
+javascript and canvas and decided I could port my existing PHP ImageHandler class to javascript using canvas as a base.</p>
+
+<p>I also decided to use this as an oppurtunity to try out <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a> which I've been hearing a lot about. Once
+again, for those out of the loop, CoffeeScript is a lot like <a href="http://sass-lang.com">Sass</a>, which I've mentioned previously, but for Javascript. It's a language
+that compiles to javascript, so you can write your code in CoffeeScript's clearer, more verbose syntax, then compile it to normal working syntax.</p>
+
+<p>I'm not normally a fan of stuff like this as I've never really seen the point, if you want to write javascript just learn javascript. However both Sass and
+CoffeeScript have convinced me that there are benefits to these things. In the case of CoffeeScript the automatic handling of things like scope and variable
+declaration make developing a lot easier and safer. The automatic wrapping in a function did cause me some confusion at first, which I'll discuss later, but does
+prevent any unnecessary pollution of the global scope and can be turned off with a compile option. I am however still adjusting to the braceless syntax which I'm
+not too keen on. I appreciate that it makes the code cleaner and smaller but as a php developer predominantly I've grown used to curly braces or at the very least
+some kind of ruby-esque closing statement.</p>
+
+<p>I decided to stick with a small selection of basic image manipulation functions to start with. As I was using my existing PHP library as a starting point I had a
+ready supplied list of functions to use, with the basic logic all worked out. All I needed to do was work out how to write the functions in CoffeeScript and
+understand how to apply them with canvas. The latter proved to be the more challenging task for the most part. Particularly due to the inconsistencies in how the
+W3C's canvas spec is implemented in Gecko and Webkit. The main issue I came across was when working on the rotate function. I had been using the
+globalCompositeMethod copy to overwrite the existing canvas data which worked fine in Firefox but in Safari and Chrome "copy" actually overlays the new data onto
+the old, so the original, unrotated image was still visible. I ended up having to create an internal canvas object as a kind of staging area so all manipulations
+were performed on that before the finished article was sent to the target canvas.</p>
+
+<p>By far my favourite CoffeeScript feature when writing this was the way it handles scope and the ability to reference the parent object easily when writing the
+code made life considerably easier, particularly as all the functions perform operations on internal objects. For any of you who haven't played with CoffeeScript
+yet or aren't familiar with the scope handling, it works like this:</p>
+
+<div><script src='https://gist.github.com/1084753.js?file=example.coffee'></script>
+<noscript><pre><code>object -&gt;
+    @prop = 'foo'
+    @bar = (newProp) =&gt;
+        @prop = newProp</code></pre></noscript></div>
+
+
+<p>Which will compile to this</p>
+
+<div><script src='https://gist.github.com/1084753.js?file=compiled.js'></script>
+<noscript><pre><code>(function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  object(function() {
+    this.prop = 'foo';
+    return this.bar = __bind(function(newProp) {
+      return this.prop = newProp;
+    }, this);
+  });
+}).call(this);</code></pre></noscript></div>
+
+
+<p>Notice that CoffeeScript adds the __bind function which is then used to make sure the function executes in the object scope. Granted you can write this yourself
+but the syntax of the CoffeeScript is a lot simpler and clearer as to what is going on.</p>
+
+<p>After a few weeks of playing around I got Obscura into a state I was happy with for a first version release. It passed all the tests for inclusion on
+<a href="http://microjs.com">microjs.com</a>, coming in at 1.5K compressed and gzipped, so I submitted it for inclusion and got it accepted. Obviously I was pretty pleased
+about this as it was one of the main reasons for writing the library in the first place and it was great that my work was considered good enough to be accepted
+onto the site but it didn't stop there. Later in the same week I got an email from <a href="http://softpedia.com/">Softpedia</a> informing me that one of my projects had
+been added to their Scripts section. At first I had no idea what they were talking about as I hadn't submitted anything to Softpedia.Upon further investigation it
+would appear that they've been scanning other websites and finding libraries and widgets to add to their new Scripts download section. The project they'd added
+was Obscura so what I'm guessing has happened is they've been scanning through microjs.com and adding projects from there. It also appears they've been using
+those projects as starting points to find other projects as throughout the day I got more emails telling me they'd added other projects that are on my blog and
+github account. By the end of it 7 of my projects had been added; <a href="http://github.com/OiNutter/Obscura/">Obscura</a>, <a href="http://github.com/OiNutter/uncharted/">Uncharted</a>,
+<a href="http://github.com/OiNutter/zebedee">Zebedee</a>, <a href="http://github.com/OiNutter/ermintrude">ermintrude</a>, <a href="http://github.com/OiNutter/Easel">Easel</a>,
+<a href="http://github.com/OiNutter/tipBox">tipBox</a> and <a href="http://github.com/OiNutter/delorean">Delorean</a>. For me this was a huge breakthrough in terms of what I've been
+trying to achieve this year as it's providing more avenues for people to find out about my work and hopefully use it and help improve it. It's also resulted in
+people starting to watch my GitHub repositories so hopefully I can build on this and keep raising my profile as the year goes on.</p>
+
+<p>For now feel free to check out Obscura on GitHub for the code and demos</p>
+
+<p><a href="http://github.com/OiNutter/Obscura">Obscura</a> | <a href="http://oinutter.github.com/Obscura">Demos</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Will McKenzie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-10T00:00:00+01:00" pubdate data-updated="true">Jun 10<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/javascript/'>Javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/" data-via="enechorion" data-counturl="http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/" title="Previous Post: Tool tips, javascript animations and coding without a net">&laquo; Tool tips, javascript animations and coding without a net</a>
+      
+      
+        <a class="basic-alignment right" href="/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/" title="Next Post: Objective-C and iOS Development - Taking My First Steps">Objective-C and iOS Development - Taking My First Steps &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/06/03/announcing-coderwall-for-ios/">Announcing Coderwall for iOS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/">Guggenheim.js - Animated fun for your galleries</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/02/19/new-beginnings/">'New Beginnings'</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/10/20/introducing-skeletor-and-grayskull/">Introducing Skeletor and Grayskull</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/09/10/a-fistful-of-documentation/">A Fistful of Documentation</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul><li><a class='category' href='/categories/actionscript/'>Actionscript</a></li><li><a class='category' href='/categories/gems/'>Gems</a></li><li><a class='category' href='/categories/javascript/'>Javascript</a></li><li><a class='category' href='/categories/misc/'>Misc</a></li><li><a class='category' href='/categories/objective-c/'>Objective-C</a></li><li><a class='category' href='/categories/python/'>Python</a></li><li><a class='category' href='/categories/ruby/'>Ruby</a></li><li><a class='category' href='/categories/ios/'>iOS</a></li></ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/OiNutter">@OiNutter</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'OiNutter',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("enechorion", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/enechorion" class="twitter-follow-button" data-show-count="false">Follow @enechorion</a>
+  
+</section>
+
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/OiNutter/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/OiNutter.json?callback=display_coderwall"></script>
+  </p>
+  
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Will McKenzie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f0416cdf5a1f51b02000003');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+</body>
+</html>
