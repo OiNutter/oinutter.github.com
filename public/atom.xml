@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[OiNutter.co.uk]]></title>
-  <link href="http://oinutter.co.uk/atom.xml" rel="self"/>
-  <link href="http://oinutter.co.uk/"/>
-  <updated>2012-06-06T08:50:38+01:00</updated>
-  <id>http://oinutter.co.uk/</id>
+  <link href="http://OiNutter.github.com/atom.xml" rel="self"/>
+  <link href="http://OiNutter.github.com/"/>
+  <updated>2012-06-13T22:39:28+01:00</updated>
+  <id>http://OiNutter.github.com/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Announcing Coderwall for iOS]]></title>
-    <link href="http://oinutter.co.uk/2012/06/03/announcing-coderwall-for-ios/"/>
+    <link href="http://OiNutter.github.com/2012/06/03/announcing-coderwall-for-ios/"/>
     <updated>2012-06-03T14:22:00+01:00</updated>
-    <id>http://oinutter.co.uk/2012/06/03/announcing-coderwall-for-ios</id>
+    <id>http://OiNutter.github.com/2012/06/03/announcing-coderwall-for-ios</id>
     <content type="html"><![CDATA[<p>After 2 months of wrestling with the App Store review process, I am proud to announce the release of my first iOS app, <a href="http://oinutter.github.com/Coderwall-iOS">Coderwall</a>. The app accesses <a href="http://coderwall.com">Coderwall.com</a>&#8217;s API and pulls down all your profile information and your list of achievements etc, and displays it in a native format, giving you access to your, and your friends&#8217;, information on the go.</p>
 
 <p>At the moment the app is a very basic read only affair as Coderwall&#8217;s API is read only, but I know they have plans to expand on the API, particularly to enable access to some of the new features they are adding to the main site, and as they do I&#8217;ll be updating the app to take advantage of those.</p>
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[Guggenheim.js - Animated fun for your galleries]]></title>
-    <link href="http://oinutter.co.uk/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/"/>
+    <link href="http://OiNutter.github.com/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/"/>
     <updated>2012-05-19T10:02:00+01:00</updated>
-    <id>http://oinutter.co.uk/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries</id>
+    <id>http://OiNutter.github.com/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been holding off on posting for a few months as I&#8217;ve had a couple of pretty cool projects that I wanted to get released so I could write about them. Unfortunately they&#8217;re currently hitting a few snags so that&#8217;s going to have to wait. I do however have something else that I cooked up based on an idea for something at work that I would like to share. So without further ado, may I introduce guggenheim.js.</p>
 
 <p>Guggenheim.js is a framework agnostic plugin for your website that will create an animatable gallery. It currently supports animated filtering and reordering of the galler items, as well as the pre-requisite pagination.  It makes use of absolute positioning and hiding the overflow to position each item in the right row and column so that they remain in the correct order but still inside the same container. This enables me to animate the items to their new position when filtering or re-ordering, giving a really cool looking effect.</p>
@@ -56,9 +56,9 @@
   
   <entry>
     <title type="html"><![CDATA['New Beginnings']]></title>
-    <link href="http://oinutter.co.uk/2012/02/19/new-beginnings/"/>
+    <link href="http://OiNutter.github.com/2012/02/19/new-beginnings/"/>
     <updated>2012-02-19T00:16:00+00:00</updated>
-    <id>http://oinutter.co.uk/2012/02/19/new-beginnings</id>
+    <id>http://OiNutter.github.com/2012/02/19/new-beginnings</id>
     <content type="html"><![CDATA[<p>So assuming anybody out there actually reads this blog more than once, you may have noticed a few things lately. Firstly that I&#8217;ve not posted in far too long,
 and secondly that there have been some changes around here. Well, it&#8217;s not just the blog, hence the extended break from posts. As the title of this post suggests
 2012 is a year of new beginnings for me. I&#8217;ve started a new job, more on that later, and decided to move my blog away from wordpress and give it a bit of an
@@ -91,9 +91,9 @@ queries.</p>
   
   <entry>
     <title type="html"><![CDATA[Introducing Skeletor and Grayskull]]></title>
-    <link href="http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull/"/>
+    <link href="http://OiNutter.github.com/2011/10/20/introducing-skeletor-and-grayskull/"/>
     <updated>2011-10-20T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull</id>
+    <id>http://OiNutter.github.com/2011/10/20/introducing-skeletor-and-grayskull</id>
     <content type="html"><![CDATA[<p>So this month I&#8217;ve been playing with something new&#8230; again (I&#8217;m going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I&#8217;ve used Ruby a little in the Rakefiles I
 use for building my javascript projects but not really done any major work with it, until now.</p>
 
@@ -141,9 +141,9 @@ install and use it. The same goes for Skeletor. Grayskull is also using Thor for
   
   <entry>
     <title type="html"><![CDATA[A Fistful of Documentation]]></title>
-    <link href="http://oinutter.co.uk/2011/09/10/a-fistful-of-documentation/"/>
+    <link href="http://OiNutter.github.com/2011/09/10/a-fistful-of-documentation/"/>
     <updated>2011-09-10T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/09/10/a-fistful-of-documentation</id>
+    <id>http://OiNutter.github.com/2011/09/10/a-fistful-of-documentation</id>
     <content type="html"><![CDATA[<p>Thanks to an issue raised on Uncharted by a fellow GitHub user pointing out that a lack of good examples was stopping people see if my work was any good and worth using I&#8217;ve started going through all my projects
 and making sure they all have proper example pages and decent instructions in their README files.</p>
 
@@ -158,9 +158,9 @@ tipBox - <a href="http://oinutter.github.com/tipBox/">Examples</a> | <a href="ht
   
   <entry>
     <title type="html"><![CDATA[Objective-C and iOS Development - Taking My First Steps]]></title>
-    <link href="http://oinutter.co.uk/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/"/>
+    <link href="http://OiNutter.github.com/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/"/>
     <updated>2011-08-26T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/08/26/objective-c-and-ios-development-taking-my-first-steps</id>
+    <id>http://OiNutter.github.com/2011/08/26/objective-c-and-ios-development-taking-my-first-steps</id>
     <content type="html"><![CDATA[<p>I recently managed to get myself a Macbook, which besides finally giving me a home computer that can cope with what I&#8217;m throwing at it, has finally enabled me to start looking at iOS development. I&#8217;ve briefly
 played with Android development but what little Java skills I picked up at university and was able to remember after all this time weren&#8217;t quite up to the task. So you&#8217;d think that tackling developing in
 Objective-C, a language I&#8217;ve never used, would be an even bigger challenge right? Well thankfully I managed to find some help, primarily from iTunes U. If anyone hasn&#8217;t checked this out yet I&#8217;d highly recommend
@@ -218,9 +218,9 @@ it won&#8217;t be a new fart app!</p>
   
   <entry>
     <title type="html"><![CDATA[Obscura - Canvas, CoffeeScript and Micro Frameworks]]></title>
-    <link href="http://oinutter.co.uk/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/"/>
+    <link href="http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/"/>
     <updated>2011-06-10T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks</id>
+    <id>http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks</id>
     <content type="html"><![CDATA[<p>It&#8217;s been a busy few months so I&#8217;m a bit behind on my posting so hopefully I can get back on schedule now. Once again I&#8217;ve been working on another javascript
 library, this time a canvas based image manipulation library called Obscura.</p>
 
@@ -309,9 +309,9 @@ people starting to watch my GitHub repositories so hopefully I can build on this
   
   <entry>
     <title type="html"><![CDATA[Tool tips, javascript animations and coding without a net]]></title>
-    <link href="http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/"/>
+    <link href="http://OiNutter.github.com/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/"/>
     <updated>2011-03-28T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net</id>
+    <id>http://OiNutter.github.com/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell users what things
 do without them having to ask us. The only decent tool tip library I&#8217;ve ever found was <a href="http://www.nickstakenburg.com/projects/prototip/">Prototip</a> by Nick
 Stakenburg but I knew I wouldn&#8217;t be able to get away with buying a license for it so I needed to create my own. After my experiences doing the emile.js version of
@@ -380,9 +380,9 @@ from now on.</p>
   
   <entry>
     <title type="html"><![CDATA[Zebedee - v0.2 - A whole lot of frameworks]]></title>
-    <link href="http://oinutter.co.uk/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/"/>
+    <link href="http://OiNutter.github.com/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/"/>
     <updated>2011-03-04T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks</id>
+    <id>http://OiNutter.github.com/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks</id>
     <content type="html"><![CDATA[<p>Ok, there&#8217;s only 3 more but still, it sounds more exciting. Yes, zebedee has made it to version 0.2, my first actual version increment on any of my projects, I
 feel quite proud! So what&#8217;s new in version 0.2? Well the main additions are the versions for <a href="http://script.aculo.us">Scriptaculous</a>,
 <a href="http://scripty2.com">Scripty2</a> and <a href="https://github.com/madrobby/emile">emile.js</a> Check out the readme for details on what files are needed and how to use them. 
@@ -411,9 +411,9 @@ keep one panel open at all times.</p>
   
   <entry>
     <title type="html"><![CDATA[Python Wrangling - Getting To Know The Beast]]></title>
-    <link href="http://oinutter.co.uk/2011/02/26/python-wrangling-getting-to-know-the-beast/"/>
+    <link href="http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast/"/>
     <updated>2011-02-26T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/02/26/python-wrangling-getting-to-know-the-beast</id>
+    <id>http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast</id>
     <content type="html"><![CDATA[<p>Okay, so this month I finally got chance to delve into Python. I&#8217;m using version 3.1, as obviously there&#8217;s no point learning something thats going to be obsolete
 fairly soon, although this did make finding examples and stuff harder as the majority of stuff I found was for Python 2.</p>
 
@@ -451,9 +451,9 @@ examples/tutorials. I&#8217;ll also write a bit more about my python experiences
   
   <entry>
     <title type="html"><![CDATA[Zebedee - A Multi Framework Accordion Widget]]></title>
-    <link href="http://oinutter.co.uk/2011/02/14/zebedee-a-multi-framework-accordion-widget/"/>
+    <link href="http://OiNutter.github.com/2011/02/14/zebedee-a-multi-framework-accordion-widget/"/>
     <updated>2011-02-14T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/02/14/zebedee-a-multi-framework-accordion-widget</id>
+    <id>http://OiNutter.github.com/2011/02/14/zebedee-a-multi-framework-accordion-widget</id>
     <content type="html"><![CDATA[<p>Zebedee is an accordion widget for multiple frameworks. At the moment it is only at V0.1, which only supports <a href="http://zeptojs.com">zepto.js</a>, but I will be adding
 support for various different animation frameworks as I have time. I wanted to play around with Zepto, <a href="http://mir.aculo.us">Thomas Fuchs</a>&#39; new mobile javascript
 framework and decided it would be fun to do an accordion widget to see if I could use the CSS3 transitions to animate the opening and closing of the accordion
@@ -475,9 +475,9 @@ checkout the project page at the link below for more information and links to th
   
   <entry>
     <title type="html"><![CDATA[Easel - An AS3 colour manipulation library]]></title>
-    <link href="http://oinutter.co.uk/2011/02/13/easel-an-as3-colour-manipulation-library/"/>
+    <link href="http://OiNutter.github.com/2011/02/13/easel-an-as3-colour-manipulation-library/"/>
     <updated>2011-02-13T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/02/13/easel-an-as3-colour-manipulation-library</id>
+    <id>http://OiNutter.github.com/2011/02/13/easel-an-as3-colour-manipulation-library</id>
     <content type="html"><![CDATA[<p>Well my post for this month was going to be a tutorial on customising Flash UI components, but unfortunately doing it properly is going to take more time than I
 have available to me at the moment so I&#8217;m just going to keep working on that in the background and will post it when it&#8217;s ready.  In the meantime I&#8217;m going to
 put up more information about some of my Open Source projects and hopefully get them better known, which in turns should, I hope, accomplish one of the aims of
@@ -504,9 +504,9 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
   
   <entry>
     <title type="html"><![CDATA[New Year's Resolutions]]></title>
-    <link href="http://oinutter.co.uk/2011/01/08/new-years-resolutions/"/>
+    <link href="http://OiNutter.github.com/2011/01/08/new-years-resolutions/"/>
     <updated>2011-01-08T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/01/08/new-years-resolutions</id>
+    <id>http://OiNutter.github.com/2011/01/08/new-years-resolutions</id>
     <content type="html"><![CDATA[<p>Ok, so one of my goals for this year is to really start getting involved more in the coding community.  That is the whole intention of this blog, to try and share my learning experiences and provide a home for the various projects I&#8217;m working on in my own time in the hope that other people will find them useful.  There is also the hope that more knowledgeable and more skilled folk than myself might catch wind and offer advice and help to myself.</p>
 
 <p>In actual fact this goal was something I set myself towards the end of last year, which is when I first started setting up this blog, but I never seemed to find time to actually kick it off.  I guess that&#8217;s what New Year&#8217;s resolutions are all about, making you take that step.  So here goes, the blog is now officially live, and you are now, hopefully, reading the inaugural post.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Gems | OiNutter.co.uk]]></title>
-  <link href="http://oinutter.co.uk/categories/gems/atom.xml" rel="self"/>
-  <link href="http://oinutter.co.uk/"/>
-  <updated>2012-06-06T08:50:38+01:00</updated>
-  <id>http://oinutter.co.uk/</id>
+  <link href="http://OiNutter.github.com/categories/gems/atom.xml" rel="self"/>
+  <link href="http://OiNutter.github.com/"/>
+  <updated>2012-06-13T22:39:28+01:00</updated>
+  <id>http://OiNutter.github.com/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Introducing Skeletor and Grayskull]]></title>
-    <link href="http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull/"/>
+    <link href="http://OiNutter.github.com/2011/10/20/introducing-skeletor-and-grayskull/"/>
     <updated>2011-10-20T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/10/20/introducing-skeletor-and-grayskull</id>
+    <id>http://OiNutter.github.com/2011/10/20/introducing-skeletor-and-grayskull</id>
     <content type="html"><![CDATA[<p>So this month I've been playing with something new... again (I'm going through an experimental phase I guess). This month it was Ruby, or more specifically Ruby Gems. I've used Ruby a little in the Rakefiles I
 use for building my javascript projects but not really done any major work with it, until now.</p>
 

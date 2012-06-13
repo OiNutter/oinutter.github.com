@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Javascript | OiNutter.co.uk]]></title>
-  <link href="http://oinutter.co.uk/categories/javascript/atom.xml" rel="self"/>
-  <link href="http://oinutter.co.uk/"/>
-  <updated>2012-06-06T08:50:38+01:00</updated>
-  <id>http://oinutter.co.uk/</id>
+  <link href="http://OiNutter.github.com/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://OiNutter.github.com/"/>
+  <updated>2012-06-13T22:39:28+01:00</updated>
+  <id>http://OiNutter.github.com/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Guggenheim.js - Animated fun for your galleries]]></title>
-    <link href="http://oinutter.co.uk/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/"/>
+    <link href="http://OiNutter.github.com/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries/"/>
     <updated>2012-05-19T10:02:00+01:00</updated>
-    <id>http://oinutter.co.uk/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries</id>
+    <id>http://OiNutter.github.com/2012/05/19/guggenheim-dot-js-animated-fun-for-your-galleries</id>
     <content type="html"><![CDATA[<p>I've been holding off on posting for a few months as I've had a couple of pretty cool projects that I wanted to get released so I could write about them. Unfortunately they're currently hitting a few snags so that's going to have to wait. I do however have something else that I cooked up based on an idea for something at work that I would like to share. So without further ado, may I introduce guggenheim.js.</p>
 
 <p>Guggenheim.js is a framework agnostic plugin for your website that will create an animatable gallery. It currently supports animated filtering and reordering of the galler items, as well as the pre-requisite pagination.  It makes use of absolute positioning and hiding the overflow to position each item in the right row and column so that they remain in the correct order but still inside the same container. This enables me to animate the items to their new position when filtering or re-ordering, giving a really cool looking effect.</p>
@@ -34,9 +34,9 @@
   
   <entry>
     <title type="html"><![CDATA[Obscura - Canvas, CoffeeScript and Micro Frameworks]]></title>
-    <link href="http://oinutter.co.uk/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/"/>
+    <link href="http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks/"/>
     <updated>2011-06-10T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks</id>
+    <id>http://OiNutter.github.com/2011/06/10/obscura-canvas-coffeescript-and-micro-frameworks</id>
     <content type="html"><![CDATA[<p>It's been a busy few months so I'm a bit behind on my posting so hopefully I can get back on schedule now. Once again I've been working on another javascript
 library, this time a canvas based image manipulation library called Obscura.</p>
 
@@ -125,9 +125,9 @@ people starting to watch my GitHub repositories so hopefully I can build on this
   
   <entry>
     <title type="html"><![CDATA[Tool tips, javascript animations and coding without a net]]></title>
-    <link href="http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/"/>
+    <link href="http://OiNutter.github.com/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net/"/>
     <updated>2011-03-28T00:00:00+01:00</updated>
-    <id>http://oinutter.co.uk/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net</id>
+    <id>http://OiNutter.github.com/2011/03/28/tool-tips-javascript-animations-and-coding-without-a-net</id>
     <content type="html"><![CDATA[<p>I've been working on overhauling the UI experience in the back end systems we use at work and decided that I wanted some tool tips to help tell users what things
 do without them having to ask us. The only decent tool tip library I've ever found was <a href="http://www.nickstakenburg.com/projects/prototip/">Prototip</a> by Nick
 Stakenburg but I knew I wouldn't be able to get away with buying a license for it so I needed to create my own. After my experiences doing the emile.js version of
@@ -196,9 +196,9 @@ from now on.</p>
   
   <entry>
     <title type="html"><![CDATA[Zebedee - v0.2 - A whole lot of frameworks]]></title>
-    <link href="http://oinutter.co.uk/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/"/>
+    <link href="http://OiNutter.github.com/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks/"/>
     <updated>2011-03-04T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks</id>
+    <id>http://OiNutter.github.com/2011/03/04/zebedee-v0-2-a-whole-lot-of-frameworks</id>
     <content type="html"><![CDATA[<p>Ok, there's only 3 more but still, it sounds more exciting. Yes, zebedee has made it to version 0.2, my first actual version increment on any of my projects, I
 feel quite proud! So what's new in version 0.2? Well the main additions are the versions for <a href="http://script.aculo.us">Scriptaculous</a>,
 <a href="http://scripty2.com">Scripty2</a> and <a href="https://github.com/madrobby/emile">emile.js</a> Check out the readme for details on what files are needed and how to use them. 
@@ -227,9 +227,9 @@ keep one panel open at all times.</p>
   
   <entry>
     <title type="html"><![CDATA[Zebedee - A Multi Framework Accordion Widget]]></title>
-    <link href="http://oinutter.co.uk/2011/02/14/zebedee-a-multi-framework-accordion-widget/"/>
+    <link href="http://OiNutter.github.com/2011/02/14/zebedee-a-multi-framework-accordion-widget/"/>
     <updated>2011-02-14T00:00:00+00:00</updated>
-    <id>http://oinutter.co.uk/2011/02/14/zebedee-a-multi-framework-accordion-widget</id>
+    <id>http://OiNutter.github.com/2011/02/14/zebedee-a-multi-framework-accordion-widget</id>
     <content type="html"><![CDATA[<p>Zebedee is an accordion widget for multiple frameworks. At the moment it is only at V0.1, which only supports <a href="http://zeptojs.com">zepto.js</a>, but I will be adding
 support for various different animation frameworks as I have time. I wanted to play around with Zepto, <a href="http://mir.aculo.us">Thomas Fuchs</a>\' new mobile javascript
 framework and decided it would be fun to do an accordion widget to see if I could use the CSS3 transitions to animate the opening and closing of the accordion
