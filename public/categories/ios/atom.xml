@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: iOS | OiNutter.co.uk]]></title>
-  <link href="http://OiNutter.github.com/categories/ios/atom.xml" rel="self"/>
-  <link href="http://OiNutter.github.com/"/>
-  <updated>2012-06-13T22:56:31+01:00</updated>
-  <id>http://OiNutter.github.com/</id>
+  <link href="http://oinutter.co.uk/categories/ios/atom.xml" rel="self"/>
+  <link href="http://oinutter.co.uk/"/>
+  <updated>2012-06-16T14:52:26+01:00</updated>
+  <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Announcing Coderwall for iOS]]></title>
-    <link href="http://OiNutter.github.com/2012/06/03/announcing-coderwall-for-ios/"/>
+    <link href="http://oinutter.co.uk/2012/06/03/announcing-coderwall-for-ios/"/>
     <updated>2012-06-03T14:22:00+01:00</updated>
-    <id>http://OiNutter.github.com/2012/06/03/announcing-coderwall-for-ios</id>
+    <id>http://oinutter.co.uk/2012/06/03/announcing-coderwall-for-ios</id>
     <content type="html"><![CDATA[<p>After 2 months of wrestling with the App Store review process, I am proud to announce the release of my first iOS app, <a href="http://oinutter.github.com/Coderwall-iOS">Coderwall</a>. The app accesses <a href="http://coderwall.com">Coderwall.com</a>'s API and pulls down all your profile information and your list of achievements etc, and displays it in a native format, giving you access to your, and your friends', information on the go.</p>
 
 <p>At the moment the app is a very basic read only affair as Coderwall's API is read only, but I know they have plans to expand on the API, particularly to enable access to some of the new features they are adding to the main site, and as they do I'll be updating the app to take advantage of those.</p>
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[Objective-C and iOS Development - Taking My First Steps]]></title>
-    <link href="http://OiNutter.github.com/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/"/>
+    <link href="http://oinutter.co.uk/2011/08/26/objective-c-and-ios-development-taking-my-first-steps/"/>
     <updated>2011-08-26T00:00:00+01:00</updated>
-    <id>http://OiNutter.github.com/2011/08/26/objective-c-and-ios-development-taking-my-first-steps</id>
+    <id>http://oinutter.co.uk/2011/08/26/objective-c-and-ios-development-taking-my-first-steps</id>
     <content type="html"><![CDATA[<p>I recently managed to get myself a Macbook, which besides finally giving me a home computer that can cope with what I'm throwing at it, has finally enabled me to start looking at iOS development. I've briefly
 played with Android development but what little Java skills I picked up at university and was able to remember after all this time weren't quite up to the task. So you'd think that tackling developing in
 Objective-C, a language I've never used, would be an even bigger challenge right? Well thankfully I managed to find some help, primarily from iTunes U. If anyone hasn't checked this out yet I'd highly recommend

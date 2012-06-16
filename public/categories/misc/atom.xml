@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Misc | OiNutter.co.uk]]></title>
-  <link href="http://OiNutter.github.com/categories/misc/atom.xml" rel="self"/>
-  <link href="http://OiNutter.github.com/"/>
-  <updated>2012-06-13T22:56:31+01:00</updated>
-  <id>http://OiNutter.github.com/</id>
+  <link href="http://oinutter.co.uk/categories/misc/atom.xml" rel="self"/>
+  <link href="http://oinutter.co.uk/"/>
+  <updated>2012-06-16T14:52:26+01:00</updated>
+  <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A Fistful of Documentation]]></title>
-    <link href="http://OiNutter.github.com/2011/09/10/a-fistful-of-documentation/"/>
+    <link href="http://oinutter.co.uk/2011/09/10/a-fistful-of-documentation/"/>
     <updated>2011-09-10T00:00:00+01:00</updated>
-    <id>http://OiNutter.github.com/2011/09/10/a-fistful-of-documentation</id>
+    <id>http://oinutter.co.uk/2011/09/10/a-fistful-of-documentation</id>
     <content type="html"><![CDATA[<p>Thanks to an issue raised on Uncharted by a fellow GitHub user pointing out that a lack of good examples was stopping people see if my work was any good and worth using I've started going through all my projects
 and making sure they all have proper example pages and decent instructions in their README files.</p>
 
@@ -32,9 +32,9 @@ tipBox - <a href="http://oinutter.github.com/tipBox/">Examples</a> | <a href="ht
   
   <entry>
     <title type="html"><![CDATA[New Year's Resolutions]]></title>
-    <link href="http://OiNutter.github.com/2011/01/08/new-years-resolutions/"/>
+    <link href="http://oinutter.co.uk/2011/01/08/new-years-resolutions/"/>
     <updated>2011-01-08T00:00:00+00:00</updated>
-    <id>http://OiNutter.github.com/2011/01/08/new-years-resolutions</id>
+    <id>http://oinutter.co.uk/2011/01/08/new-years-resolutions</id>
     <content type="html"><![CDATA[<p>Ok, so one of my goals for this year is to really start getting involved more in the coding community.  That is the whole intention of this blog, to try and share my learning experiences and provide a home for the various projects I'm working on in my own time in the hope that other people will find them useful.  There is also the hope that more knowledgeable and more skilled folk than myself might catch wind and offer advice and help to myself.</p>
 
 <p>In actual fact this goal was something I set myself towards the end of last year, which is when I first started setting up this blog, but I never seemed to find time to actually kick it off.  I guess that's what New Year's resolutions are all about, making you take that step.  So here goes, the blog is now officially live, and you are now, hopefully, reading the inaugural post.</p>
