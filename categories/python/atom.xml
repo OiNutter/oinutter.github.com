@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Python | OiNutter.co.uk]]></title>
-  <link href="http://OiNutter.github.com/categories/python/atom.xml" rel="self"/>
-  <link href="http://OiNutter.github.com/"/>
-  <updated>2012-06-13T22:56:31+01:00</updated>
-  <id>http://OiNutter.github.com/</id>
+  <link href="http://oinutter.co.uk/categories/python/atom.xml" rel="self"/>
+  <link href="http://oinutter.co.uk/"/>
+  <updated>2012-06-16T14:52:26+01:00</updated>
+  <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Python Wrangling - Getting To Know The Beast]]></title>
-    <link href="http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast/"/>
+    <link href="http://oinutter.co.uk/2011/02/26/python-wrangling-getting-to-know-the-beast/"/>
     <updated>2011-02-26T00:00:00+00:00</updated>
-    <id>http://OiNutter.github.com/2011/02/26/python-wrangling-getting-to-know-the-beast</id>
+    <id>http://oinutter.co.uk/2011/02/26/python-wrangling-getting-to-know-the-beast</id>
     <content type="html"><![CDATA[<p>Okay, so this month I finally got chance to delve into Python. I'm using version 3.1, as obviously there's no point learning something thats going to be obsolete
 fairly soon, although this did make finding examples and stuff harder as the majority of stuff I found was for Python 2.</p>
 
