@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Easel - An AS3 colour manipulation library - OiNutter.co.uk</title>
+  <title>Think About The End User! - OiNutter.co.uk</title>
   <meta name="author" content="Will McKenzie">
 
   
-  <meta name="description" content="Well my post for this month was going to be a tutorial on customising Flash UI components, but unfortunately doing it properly is going to take more &hellip;">
+  <meta name="description" content="There seems to be a strange belief amongst some developers that just because admin systems aren't shown to users, they don't have to spend any time &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://oinutter.co.uk/2011/02/13/easel-an-as3-colour-manipulation-library/">
+  <link rel="canonical" href="http://oinutter.co.uk/2012/07/14/think-about-the-end-user/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Easel - an AS3 Colour Manipulation Library</h1>
+      <h1 class="entry-title">Think About the End User!</h1>
     
     
       <p class="meta">
@@ -96,34 +96,29 @@
   
 
 
-<time datetime="2011-02-13T00:00:00+00:00" pubdate data-updated="true">Feb 13<span>th</span>, 2011</time>
+<time datetime="2012-07-14T17:24:00+01:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Well my post for this month was going to be a tutorial on customising Flash UI components, but unfortunately doing it properly is going to take more time than I
-have available to me at the moment so I'm just going to keep working on that in the background and will post it when it's ready.  In the meantime I'm going to
-put up more information about some of my Open Source projects and hopefully get them better known, which in turns should, I hope, accomplish one of the aims of
-this blog.  Getting people to help improve my stuff and, by proxy, improving my skills and knowledge.</p>
+<div class="entry-content"><p>There seems to be a strange belief amongst some developers that just because admin systems aren't shown to users, they don't have to spend any time on them. The result is control panels that are ugly to look at and a nightmare to use, because they've just been done in the simplest way possible. Honestly, I think this is complete and utter nonsense! If you're building something that people, whoever they are, have to interact with and you're not considering the user experience, you're doing it wrong!</p>
 
-<p>So first up, purely by virtue of being my most recent, is Easel, a colour (I'm english, so yes it is spelt right!) manipulation library for Actionscript 3.  Easel
-came about from a need to take a randomly generated colour and get colours that would work well with it for dynamically generated objects in a recent project at
-work.  At first I just managed to find the <a href="http://lab.revoke.ca/2009/04/as3-color-functions/">Tint library by RevokeLabs</a> which provided me with a darken
-function which did the trick for me.  However I then needed more, so I managed to find an algorithm to calculate the complementary colour on a forum somewhere,
-which I'm afraid I can't remember, but have subsequently replaced so I don't feel too bad about not crediting it.  From there I had the idea of replicating the
-colour manipulation functions of <a href="" title="http://sass-lang.com/">Sass</a>, which I'd read about in a recent .Net tutorial, but hadn't had a chance to play around with
-(I have now and will no doubt be writing more about this down the line, watch this space!).</p>
+<p>Taking some time to think about how people will be using your admin system and planning accordingly will save everyone a lot of headaches down the line;</p>
 
-<p>I was struggling to find the algorithms to accomplish what I needed in AS3 so I ended up pulling the source for Sass from GitHub and wading through that to find
-what I needed.  I then proceeded to rewrite the functions to AS3 which involved rewriting the original manipulation functions from the Tint library as they relied
-on manipulating the RGB values whereas Sass was working with the HSL.  I did however keep the getHex and getRGB functions as there seemed to be no real difference
-in them.  The upside to this approach was that I learnt a bit about colour manipulations, and got more experience with Ruby code, always a good thing!</p>
+<ul>
+<li>You'll be less likely to have users bugging you about needing the admin to do something else, or to do something easier, which means more time to work on new things, rather than re-doing existing work.</li>
+<li>Because the flow of the admin system is clearer and more intuitive, there's less chance of users making mistakes and doing the wrong thing with it, meaning you won't have to spend time fixing their mistakes.</li>
+<li>Information will be presented to the end user much clearer, so you won't have to spend as much time explaining to them how it all works.</li>
+</ul>
 
-<p>Please check out the link below or on the right for the project page which contains links to the GitHub source and the Demo.</p>
 
-<p><a href="https://github.com/OiNutter/Easel">Easel</a></p>
+<p>For me there are other benefits to making the admin systems a lot nicer; in web development we spend a lot of our time having to make sure things are cross browser compatible, which can often mean not exploring the latest technologies or ideas, or making things as slick and funky as we'd like, because some browsers don't support the features we'd need. With admin systems we can often have a bit more say in what browsers people should be using, so we can restrict them to modern, up to date browsers, giving us the opportunity to try out some cool stuff that's going to make things much more interesting for both them and us.</p>
+
+<p>Another thing often overlooked is the usefulness of colour. Colour coding information and buttons can give a much quicker visual clue than any label, allowing an end user to gain a broad overview of the information being displayed, just with a glance. This can also help with making the system more intuitive; green buttons for positive actions, red buttons for negative etc.</p>
+
+<p>So next time you're building a backend for a site you're working on, or just any form of control panel. Stop and think about the end user. If possible ask them about how they would ideally want it to work, treat it like you would the design and developement of the front end and get user feedback throughout the process. Do all this (and act upon it) and you'll end up with much happier end users, even if the end user is you.</p>
 </div>
 
 
@@ -146,12 +141,12 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
   
 
 
-<time datetime="2011-02-13T00:00:00+00:00" pubdate data-updated="true">Feb 13<span>th</span>, 2011</time>
+<time datetime="2012-07-14T17:24:00+01:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/categories/actionscript/'>Actionscript</a>
+    <a class='category' href='/categories/development/'>Development</a>, <a class='category' href='/categories/misc/'>Misc</a>
   
 </span>
 
@@ -160,7 +155,7 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://oinutter.co.uk/2011/02/13/easel-an-as3-colour-manipulation-library/" data-via="enechorion" data-counturl="http://oinutter.co.uk/2011/02/13/easel-an-as3-colour-manipulation-library/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://oinutter.co.uk/2012/07/14/think-about-the-end-user/" data-via="enechorion" data-counturl="http://oinutter.co.uk/2012/07/14/think-about-the-end-user/" >Tweet</a>
   
   
   
@@ -169,10 +164,8 @@ in them.  The upside to this approach was that I learnt a bit about colour mani
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2011/01/08/new-years-resolutions/" title="Previous Post: New Year's Resolutions">&laquo; New Year's Resolutions</a>
+        <a class="basic-alignment left" href="/2012/06/03/announcing-coderwall-for-ios/" title="Previous Post: Announcing Coderwall for iOS">&laquo; Announcing Coderwall for iOS</a>
       
-      
-        <a class="basic-alignment right" href="/2011/02/14/zebedee-a-multi-framework-accordion-widget/" title="Next Post: Zebedee - A Multi Framework Accordion Widget">Zebedee - A Multi Framework Accordion Widget &raquo;</a>
       
     </p>
   </footer>

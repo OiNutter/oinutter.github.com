@@ -4,7 +4,7 @@
   <title><![CDATA[OiNutter.co.uk]]></title>
   <link href="http://oinutter.co.uk/atom.xml" rel="self"/>
   <link href="http://oinutter.co.uk/"/>
-  <updated>2012-06-16T14:52:26+01:00</updated>
+  <updated>2012-07-15T14:27:10+01:00</updated>
   <id>http://oinutter.co.uk/</id>
   <author>
     <name><![CDATA[Will McKenzie]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Think About The End User!]]></title>
+    <link href="http://oinutter.co.uk/2012/07/14/think-about-the-end-user/"/>
+    <updated>2012-07-14T17:24:00+01:00</updated>
+    <id>http://oinutter.co.uk/2012/07/14/think-about-the-end-user</id>
+    <content type="html"><![CDATA[<p>There seems to be a strange belief amongst some developers that just because admin systems aren&#8217;t shown to users, they don&#8217;t have to spend any time on them. The result is control panels that are ugly to look at and a nightmare to use, because they&#8217;ve just been done in the simplest way possible. Honestly, I think this is complete and utter nonsense! If you&#8217;re building something that people, whoever they are, have to interact with and you&#8217;re not considering the user experience, you&#8217;re doing it wrong!</p>
+
+<p>Taking some time to think about how people will be using your admin system and planning accordingly will save everyone a lot of headaches down the line;</p>
+
+<ul>
+<li>You&#8217;ll be less likely to have users bugging you about needing the admin to do something else, or to do something easier, which means more time to work on new things, rather than re-doing existing work.</li>
+<li>Because the flow of the admin system is clearer and more intuitive, there&#8217;s less chance of users making mistakes and doing the wrong thing with it, meaning you won&#8217;t have to spend time fixing their mistakes.</li>
+<li>Information will be presented to the end user much clearer, so you won&#8217;t have to spend as much time explaining to them how it all works.</li>
+</ul>
+
+
+<p>For me there are other benefits to making the admin systems a lot nicer; in web development we spend a lot of our time having to make sure things are cross browser compatible, which can often mean not exploring the latest technologies or ideas, or making things as slick and funky as we&#8217;d like, because some browsers don&#8217;t support the features we&#8217;d need. With admin systems we can often have a bit more say in what browsers people should be using, so we can restrict them to modern, up to date browsers, giving us the opportunity to try out some cool stuff that&#8217;s going to make things much more interesting for both them and us.</p>
+
+<p>Another thing often overlooked is the usefulness of colour. Colour coding information and buttons can give a much quicker visual clue than any label, allowing an end user to gain a broad overview of the information being displayed, just with a glance. This can also help with making the system more intuitive; green buttons for positive actions, red buttons for negative etc.</p>
+
+<p>So next time you&#8217;re building a backend for a site you&#8217;re working on, or just any form of control panel. Stop and think about the end user. If possible ask them about how they would ideally want it to work, treat it like you would the design and developement of the front end and get user feedback throughout the process. Do all this (and act upon it) and you&#8217;ll end up with much happier end users, even if the end user is you.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Announcing Coderwall for iOS]]></title>
