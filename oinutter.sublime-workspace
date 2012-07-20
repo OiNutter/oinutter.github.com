@@ -4,58 +4,6 @@
 		"selected_items":
 		[
 			[
-				"Depe",
-				"DependencyFile"
-			],
-			[
-				"D",
-				"DependencyFile"
-			],
-			[
-				"relat",
-				"relativize_root_path"
-			],
-			[
-				"re",
-				"relative_pathname"
-			],
-			[
-				"requir",
-				"required_assets"
-			],
-			[
-				"depen",
-				"dependency_paths"
-			],
-			[
-				"logic",
-				"logical_path"
-			],
-			[
-				"un",
-				"unregister_bundle_processor"
-			],
-			[
-				"regi",
-				"register_bundle_processor"
-			],
-			[
-				"mime",
-				"mime_type"
-			],
-			[
-				"regist",
-				"register_preprocessor"
-			],
-			[
-				"abs",
-				"abstractmethod"
-			],
-			[
-				"locals",
-				"locals_keys"
-			],
-			[
 				"scr",
 				"scrollOffsetX"
 			],
@@ -139,6 +87,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "source/_posts/2012-07-14-think-about-the-end-user.md",
+			"settings":
+			{
+				"buffer_size": 2778,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -146,14 +102,6 @@
 		"height": 392.0,
 		"selected_items":
 		[
-			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
-			],
 			[
 				"html",
 				"Set Syntax: HTML"
@@ -169,9 +117,13 @@
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 476.0
 	},
 	"console":
 	{
@@ -188,47 +140,8 @@
 	},
 	"file_history":
 	[
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/asset_attributes.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/assets.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/processed_asset.rb",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/static_asset.rb",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/bundled_asset.rb",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/asset.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/processor.py",
-		"/Users/will/Documents/workspace/rivets/rivets/processing.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/environment.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/__init__.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/environment.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/base.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/base.py",
-		"/Users/will/Documents/workspace/rivets/rivets/paths.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/paths.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/engines.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/errors.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/errors.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/processor.rb",
-		"/Users/will/Documents/workspace/uglipyjs/uglipyjs/__init__.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/context.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/context.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/directive_processor.rb",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/engines.rb",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/processing.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/charset_normalizer.py",
-		"/Users/will/Documents/workspace/rivets/rivets/safety_colons.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/safety_colons.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/mime.py",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/charset_normalizer.rb",
-		"/Users/will/Documents/workspace/rivets/rivets/utils.py",
-		"/Users/will/Documents/workspace/exoticvetmedicine/exoticvetmedicine.sublime-project",
-		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/will/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/will/Documents/workspace/sprockets/lib/sprockets/mime.rb",
-		"/Users/will/Documents/workspace/shift/LICENSE",
-		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/Python.sublime-settings",
-		"/Users/will/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/will/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Users/will/Documents/workspace/oinutter.github.com/_config.yml",
+		"/Users/will/Documents/workspace/Capoeira Songbook/HowToPlay.html",
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/models/Bookmark.rb",
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/Bookmark.js.coffee",
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/app.js.coffee",
@@ -250,6 +163,7 @@
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/ConfirmDialog.js.coffee",
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/BookmarkCollection.js.coffee",
 		"/Users/will/Documents/workspace/exoticvetmedicine/mongo.log",
+		"/Users/will/Documents/workspace/exoticvetmedicine/exoticvetmedicine.sublime-project",
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/models/User.rb",
 		"/Users/will/Documents/workspace/exoticvetmedicine/app/assets/coffee/AddDialog.js.coffee",
 		"/Users/will/Documents/workspace/exoticvetmedicine/exoticvetmedicine.sublime-workspace",
@@ -297,8 +211,6 @@
 		"height": 0.0,
 		"where_history":
 		[
-			"*.*",
-			"lower",
 			""
 		]
 	},
@@ -307,19 +219,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"self._required_assets",
-			"_required_assets",
-			"coder",
-			"length",
-			"object_id",
-			"attributes_for",
-			"expire_index!",
-			"cache_key_for",
-			"\\t",
-			"  ",
-			"__LINE__",
-			"  ",
-			"lowercase",
 			"$('#panels').anim({'margin-left'",
 			"grey",
 			"Dialog",
@@ -332,15 +231,9 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
-			"self.expire_index()",
-			"  ",
-			"\\t",
-			"LINE",
-			"\\t",
-			"lower",
 			"$orange"
 		],
 		"reverse": false,
@@ -352,14 +245,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "source/_posts/2012-07-14-think-about-the-end-user.md",
+					"settings":
+					{
+						"buffer_size": 2778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 0.0
 	},
 	"input":
 	{
@@ -398,14 +319,6 @@
 		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"paths",
-				"rivets/paths.py"
-			],
-			[
-				"environment",
-				"rivets/environment.py"
-			]
 		],
 		"width": 0.0
 	},
